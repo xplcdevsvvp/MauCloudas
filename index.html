@@ -29,9 +29,7 @@
       transition: opacity 0.3s;
     }
     .glow-box:hover::before { opacity: 1; }
-    /* Dropdown */
     .dropdown:hover .dropdown-menu { display: block; }
-    /* Modal */
     .modal { display:none; }
     .modal.active { display:flex; }
   </style>
@@ -44,8 +42,6 @@
       <div class="text-xl font-bold bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">Asaka Cloud</div>
       <nav class="hidden md:flex gap-8 text-sm text-slate-300 items-center">
         <a href="#features" class="hover:text-white">Asaka Cloud</a>
-
-        <!-- Dịch vụ -->
         <div class="relative dropdown">
           <button class="hover:text-white flex items-center gap-1">Dịch vụ ▾</button>
           <div class="absolute hidden dropdown-menu mt-2 bg-slate-900 rounded-lg shadow-lg w-44">
@@ -54,7 +50,6 @@
             <a href="#web" class="block px-4 py-2 hover:bg-slate-800">Web Hosting</a>
           </div>
         </div>
-
         <a href="#support" class="hover:text-white">Hỗ Trợ</a>
         <button onclick="openModal('loginModal')" class="hover:text-white">Đăng Nhập</button>
         <button onclick="openModal('registerModal')" class="px-3 py-1 rounded bg-indigo-600 hover:bg-indigo-500 font-semibold">Đăng Ký</button>
@@ -72,7 +67,7 @@
     </p>
     <div class="mt-6 flex justify-center gap-4">
       <a href="#pricing" class="px-6 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 font-semibold">Xem bảng giá</a>
-      <a href="#contact" class="px-6 py-3 rounded-lg border border-white/10 hover:bg-white/10">Liên hệ ngay</a>
+      <a href="#cta" class="px-6 py-3 rounded-lg border border-white/10 hover:bg-white/10">Liên hệ ngay</a>
     </div>
   </section>
 
@@ -81,43 +76,12 @@
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-2xl font-bold text-center">Asaka Cloud có gì?</h2>
       <div class="grid md:grid-cols-3 gap-6 mt-10">
-        
-        <div class="glow-box p-6 bg-slate-900">
-          <div class="text-3xl">⚡</div>
-          <h3 class="font-semibold mt-3">Khởi tạo tức thì</h3>
-          <p class="text-slate-400 text-sm mt-2">Máy chủ sẵn sàng chỉ trong 30s, không phải chờ đợi.</p>
-        </div>
-
-        <div class="glow-box p-6 bg-slate-900">
-          <div class="text-3xl">🛡️</div>
-          <h3 class="font-semibold mt-3">Bảo vệ AntiDDoS Pro</h3>
-          <p class="text-slate-400 text-sm mt-2">Chống DDoS Layer 4/7, an toàn & uptime cao.</p>
-        </div>
-
-        <div class="glow-box p-6 bg-slate-900">
-          <div class="text-3xl">💾</div>
-          <h3 class="font-semibold mt-3">Sao lưu không giới hạn</h3>
-          <p class="text-slate-400 text-sm mt-2">Backup & khôi phục chỉ với 1 click, an toàn dữ liệu.</p>
-        </div>
-
-        <div class="glow-box p-6 bg-slate-900">
-          <div class="text-3xl">⚙️</div>
-          <h3 class="font-semibold mt-3">Cài đặt 1-click</h3>
-          <p class="text-slate-400 text-sm mt-2">Cài đặt mod/plugin nhanh chóng Forge, Fabric, Paper.</p>
-        </div>
-
-        <div class="glow-box p-6 bg-slate-900">
-          <div class="text-3xl">📞</div>
-          <h3 class="font-semibold mt-3">Hỗ trợ 24/7</h3>
-          <p class="text-slate-400 text-sm mt-2">Đội ngũ Việt Nam hỗ trợ nhanh qua Discord & ticket.</p>
-        </div>
-
-        <div class="glow-box p-6 bg-slate-900">
-          <div class="text-3xl">💰</div>
-          <h3 class="font-semibold mt-3">Giá cả hợp lý</h3>
-          <p class="text-slate-400 text-sm mt-2">Chi phí thấp nhưng chất lượng cao, phù hợp mọi túi tiền.</p>
-        </div>
-
+        <div class="glow-box p-6 bg-slate-900"><div class="text-3xl">⚡</div><h3 class="font-semibold mt-3">Khởi tạo tức thì</h3><p class="text-slate-400 text-sm mt-2">Máy chủ sẵn sàng chỉ trong 30s, không phải chờ đợi.</p></div>
+        <div class="glow-box p-6 bg-slate-900"><div class="text-3xl">🛡️</div><h3 class="font-semibold mt-3">Bảo vệ AntiDDoS Pro</h3><p class="text-slate-400 text-sm mt-2">Chống DDoS Layer 4/7, an toàn & uptime cao.</p></div>
+        <div class="glow-box p-6 bg-slate-900"><div class="text-3xl">💾</div><h3 class="font-semibold mt-3">Sao lưu không giới hạn</h3><p class="text-slate-400 text-sm mt-2">Backup & khôi phục chỉ với 1 click, an toàn dữ liệu.</p></div>
+        <div class="glow-box p-6 bg-slate-900"><div class="text-3xl">⚙️</div><h3 class="font-semibold mt-3">Cài đặt 1-click</h3><p class="text-slate-400 text-sm mt-2">Cài đặt mod/plugin nhanh chóng Forge, Fabric, Paper.</p></div>
+        <div class="glow-box p-6 bg-slate-900"><div class="text-3xl">📞</div><h3 class="font-semibold mt-3">Hỗ trợ 24/7</h3><p class="text-slate-400 text-sm mt-2">Đội ngũ Việt Nam hỗ trợ nhanh qua Discord & ticket.</p></div>
+        <div class="glow-box p-6 bg-slate-900"><div class="text-3xl">💰</div><h3 class="font-semibold mt-3">Giá cả hợp lý</h3><p class="text-slate-400 text-sm mt-2">Chi phí thấp nhưng chất lượng cao, phù hợp mọi túi tiền.</p></div>
       </div>
     </div>
   </section>
@@ -127,64 +91,63 @@
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-2xl font-bold text-center">Chọn gói phù hợp</h2>
       <div class="grid md:grid-cols-3 gap-6 mt-10">
-        
-        <div class="glow-box p-6 bg-slate-900 text-center">
-          <h3 class="font-semibold">Basic</h3>
-          <p class="text-3xl font-bold mt-3">150K <span class="text-base">/tháng</span></p>
-          <ul class="mt-4 text-slate-300 text-sm space-y-2">
-            <li>2 vCPU</li>
-            <li>4GB RAM</li>
-            <li>50GB SSD NVMe</li>
-            <li>Anti-DDoS</li>
-          </ul>
-          <a href="#contact" class="mt-6 block py-2 rounded-md bg-indigo-600 font-semibold">Đặt ngay</a>
-        </div>
-
-        <div class="glow-box p-6 bg-slate-900 text-center">
-          <h3 class="font-semibold">Pro</h3>
-          <p class="text-3xl font-bold mt-3">300K <span class="text-base">/tháng</span></p>
-          <ul class="mt-4 text-slate-300 text-sm space-y-2">
-            <li>4 vCPU</li>
-            <li>8GB RAM</li>
-            <li>100GB SSD NVMe</li>
-            <li>Anti-DDoS + Backup</li>
-          </ul>
-          <a href="#contact" class="mt-6 block py-2 rounded-md bg-indigo-600 font-semibold">Đặt ngay</a>
-        </div>
-
-        <div class="glow-box p-6 bg-slate-900 text-center">
-          <h3 class="font-semibold">Premium</h3>
-          <p class="text-3xl font-bold mt-3">600K <span class="text-base">/tháng</span></p>
-          <ul class="mt-4 text-slate-300 text-sm space-y-2">
-            <li>8 vCPU</li>
-            <li>16GB RAM</li>
-            <li>200GB SSD NVMe</li>
-            <li>Anti-DDoS + SLA</li>
-          </ul>
-          <a href="#contact" class="mt-6 block py-2 rounded-md bg-indigo-600 font-semibold">Đặt ngay</a>
-        </div>
-
+        <div class="glow-box p-6 bg-slate-900 text-center"><h3 class="font-semibold">Basic</h3><p class="text-3xl font-bold mt-3">150K <span class="text-base">/tháng</span></p><ul class="mt-4 text-slate-300 text-sm space-y-2"><li>2 vCPU</li><li>4GB RAM</li><li>50GB SSD NVMe</li><li>Anti-DDoS</li></ul><a href="#cta" class="mt-6 block py-2 rounded-md bg-indigo-600 font-semibold">Đặt ngay</a></div>
+        <div class="glow-box p-6 bg-slate-900 text-center"><h3 class="font-semibold">Pro</h3><p class="text-3xl font-bold mt-3">300K <span class="text-base">/tháng</span></p><ul class="mt-4 text-slate-300 text-sm space-y-2"><li>4 vCPU</li><li>8GB RAM</li><li>100GB SSD NVMe</li><li>Anti-DDoS + Backup</li></ul><a href="#cta" class="mt-6 block py-2 rounded-md bg-indigo-600 font-semibold">Đặt ngay</a></div>
+        <div class="glow-box p-6 bg-slate-900 text-center"><h3 class="font-semibold">Premium</h3><p class="text-3xl font-bold mt-3">600K <span class="text-base">/tháng</span></p><ul class="mt-4 text-slate-300 text-sm space-y-2"><li>8 vCPU</li><li>16GB RAM</li><li>200GB SSD NVMe</li><li>Anti-DDoS + SLA</li></ul><a href="#cta" class="mt-6 block py-2 rounded-md bg-indigo-600 font-semibold">Đặt ngay</a></div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="py-16 bg-slate-900/40">
-    <div class="max-w-3xl mx-auto px-4 text-center">
-      <h2 class="text-2xl font-bold">Liên hệ / Đặt hàng</h2>
-      <p class="text-slate-400 mt-2">Điền thông tin để nhận tư vấn nhanh chóng.</p>
-      <form class="mt-6 space-y-4">
-        <input type="text" placeholder="Tên của bạn" class="w-full p-3 rounded-md bg-slate-950 border border-white/10 outline-none">
-        <input type="email" placeholder="Email" class="w-full p-3 rounded-md bg-slate-950 border border-white/10 outline-none">
-        <textarea placeholder="Nội dung (game, gói...)" rows="4" class="w-full p-3 rounded-md bg-slate-950 border border-white/10 outline-none"></textarea>
-        <button class="w-full py-3 rounded-lg bg-indigo-600 font-semibold">Gửi yêu cầu</button>
-      </form>
+  <!-- CTA BOX -->
+  <section id="cta" class="py-16">
+    <div class="max-w-4xl mx-auto px-6 bg-gradient-to-r from-indigo-900/40 to-slate-900/40 rounded-2xl border border-indigo-500/30 p-10 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">Sẵn Sàng Tạo Máy Chủ Game?</h2>
+      <p class="text-slate-300 mb-6">Khởi tạo máy chủ game của riêng bạn chỉ trong vài phút. Hệ thống tự động kích hoạt, bảo mật cao và đội ngũ hỗ trợ 24/7 sẵn sàng giúp đỡ khi cần thiết.</p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <a href="#pricing" class="px-6 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 font-semibold">Tạo Máy Chủ Ngay →</a>
+        <a href="https://discord.com" target="_blank" class="px-6 py-3 rounded-lg bg-slate-800 hover:bg-slate-700 font-semibold">Tham Gia Discord</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HARDWARE -->
+  <section class="py-16 bg-slate-900/40">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-center">Phần cứng chất lượng cao</h2>
+      <p class="text-slate-400 text-center mt-2">Máy chủ của chúng tôi được xây dựng trên nền tảng phần cứng enterprise hàng đầu.</p>
+      <div class="grid md:grid-cols-2 gap-6 mt-10">
+        <div class="glow-box p-6 bg-slate-900"><h3 class="font-semibold">CPU Server CLC</h3><p class="text-slate-400 text-sm mt-2">Intel Xeon Gold series & AMD Ryzen 9000 - Chip server hiệu năng vượt trội.</p></div>
+        <div class="glow-box p-6 bg-slate-900"><h3 class="font-semibold">RAM DDR4 ECC</h3><p class="text-slate-400 text-sm mt-2">Bộ nhớ ECC tự động sửa lỗi, đảm bảo tính ổn định.</p></div>
+        <div class="glow-box p-6 bg-slate-900"><h3 class="font-semibold">SSD NVMe</h3><p class="text-slate-400 text-sm mt-2">Ổ cứng NVMe tốc độ cao, giảm lag tối đa.</p></div>
+        <div class="glow-box p-6 bg-slate-900"><h3 class="font-semibold">Port 40Gbps</h3><p class="text-slate-400 text-sm mt-2">Kết nối mạng 40Gbps - ping thấp, mượt mà.</p></div>
+      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="py-8 border-t border-white/10 text-center text-slate-400 text-sm">
-    © <span id="year"></span> Asaka Cloud Hosting. All rights reserved.
+  <footer class="py-12 border-t border-white/10 bg-slate-950 text-slate-400 text-sm">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-6">
+      <div>
+        <div class="text-lg font-bold text-indigo-400">ASAKA CLOUD</div>
+        <p class="mt-3 text-xs">Một sản phẩm của CÔNG TY TNHH GIẢI PHÁP CÔNG NGHỆ ZYN DATA</p>
+        <p class="text-xs mt-2">Mã số thuế: 3604019577</p>
+        <p class="text-xs">Chịu trách nhiệm quản lý: PHẠM TRẦN CÔNG DANH</p>
+        <p class="text-xs">Đại diện pháp luật: NGUYỄN DIÊN THIÊN</p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-2">Dịch Vụ</h4>
+        <ul class="space-y-1 text-xs"><li>Gói Máy chủ Game</li><li>Dedicated Server</li></ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-2">Điều Hướng</h4>
+        <ul class="space-y-1 text-xs"><li>Điều khoản</li><li>Client Area</li><li>Game Panel</li><li>Liên Hệ</li></ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-2">Kết nối với chúng tôi</h4>
+        <div class="flex gap-3 text-lg"><a href="#">🌐</a><a href="#">💬</a></div>
+        <p class="mt-3 text-xs">© 2022 - 2025 ZynData Technology Solutions</p>
+      </div>
+    </div>
   </footer>
 
   <!-- LOGIN MODAL -->
@@ -214,7 +177,6 @@
 
   <script>
     document.getElementById("year").innerText = new Date().getFullYear();
-
     function openModal(id){ document.getElementById(id).classList.add("active"); }
     function closeModal(id){ document.getElementById(id).classList.remove("active"); }
     function switchModal(){
@@ -222,6 +184,5 @@
       document.getElementById("registerModal").classList.toggle("active");
     }
   </script>
-
 </body>
-  </html>
+                                                   </html>

@@ -1,196 +1,458 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chỉ Tech Market</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Asaka-like — Demo (Clone)</title>
+
+  <!-- Tailwind for quick styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS for scroll animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
   <style>
-    body {
-      margin: 0;
-      font-family: 'Orbitron', sans-serif;
-      background: radial-gradient(circle at top, #0f0f0f, #000);
-      color: white;
-      overflow-x: hidden;
+    :root{
+      --bg:#07060a;
+      --panel: rgba(255,255,255,0.03);
+      --glass-border: rgba(255,255,255,0.04);
+      --accent1:#7B61FF;
+      --accent2:#4AC1FF;
+      --neon:#7b61ff;
+    }
+    body{
+      background: var(--bg);
+      color: #e6eef8;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
     }
 
-    /* Navbar */
-    .navbar {
-      background: #111;
-      padding: 12px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 0 10px #00ffff;
+    /* NAV pill */
+    .nav-pill{
+      background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(255,255,255,0.01));
+      border-radius: 999px;
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 6px 30px rgba(10,10,12,0.6);
     }
 
-    .navbar .logo {
-      color: #00ffff;
-      font-size: 20px;
-      font-weight: bold;
+    .brand{
+      background: linear-gradient(90deg,var(--accent1),var(--accent2));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      font-weight:700;
     }
 
-    .navbar nav a {
-      color: white;
-      margin-left: 20px;
-      text-decoration: none;
-      font-size: 14px;
+    /* hero background overlay */
+    .hero-bg{
+      background-image: url('https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1800&auto=format&fit=crop&ixlib=rb-4.0.3&s=0f3e8e9f3d2aba9e4a2d6ee3a9f2f9e2');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(8,10,14,0.65), rgba(6,6,10,0.9));
+      mix-blend-mode: multiply;
     }
 
-    .navbar nav a:hover {
-      color: #00ffff;
+    /* glass cards (feature boxes) */
+    .glass {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(6px);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .glass:hover{ transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.6), 0 0 30px rgba(119,72,255,0.08); }
+
+    .feature-outline {
+      border-radius: 14px;
+      padding: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+    /* neon small icon circle */
+    .icon-circle{
+      width:44px;height:44px;border-radius:10px;
+      display:inline-flex;align-items:center;justify-content:center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.04);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.5);
     }
 
-    /* Hero */
-    .hero {
-      padding: 100px 20px;
-      text-align: center;
+    /* gallery images rounded */
+    .rounded-image { border-radius: 12px; overflow:hidden; }
+
+    /* badges for software tags */
+    .tag {
+      display:inline-block;padding:8px 12px;border-radius:999px;margin:6px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015));
+      border:1px solid rgba(255,255,255,0.03);
+      color:#e9f0ff;font-weight:600;font-size:13px;
     }
 
-    .hero h1 {
-      font-size: 36px;
-      color: #00ffff;
-      margin-bottom: 20px;
-      text-shadow: 0 0 10px #00ffff;
+    /* testimonials */
+    .testimonial { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.04); border-radius:12px; padding:18px; }
+
+    /* small circle floating action */
+    .fab {
+      width:56px;height:56px;border-radius:999px;
+      background: linear-gradient(90deg,var(--accent1),var(--accent2));
+      box-shadow: 0 8px 30px rgba(75,12,120,0.3);
+      display:flex;align-items:center;justify-content:center;color:#071024;font-weight:700;
     }
 
-    .hero p {
-      font-size: 16px;
-      max-width: 600px;
-      margin: 0 auto 30px;
-      color: #ccc;
-    }
-
-    .button {
-      background: linear-gradient(90deg, #ff00cc, #3333ff, #00ffff);
-      color: white;
-      padding: 14px 28px;
-      border: none;
-      border-radius: 12px;
-      font-weight: bold;
-      cursor: pointer;
-      animation: gradientMove 5s ease infinite;
-      background-size: 300% 300%;
-      box-shadow: 0 0 10px #00ffff;
-      transition: transform 0.3s ease;
-    }
-
-    .button:hover {
-      transform: scale(1.1) rotate(2deg);
-    }
-
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* Card Grid */
-    .grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 40px 20px;
-    }
-
-    .card {
-      background: #1a1a1a;
-      border-radius: 16px;
-      width: 220px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(0,255,255,0.2);
-      transition: transform 0.3s ease;
-      cursor: grab;
-    }
-
-    .card:active {
-      cursor: grabbing;
-    }
-
-    .card:hover {
-      transform: scale(1.05) rotate(-1deg);
-    }
-
-    .card h3 {
-      color: #00ffff;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      font-size: 14px;
-      color: #aaa;
-    }
-
-    /* Footer */
-    footer {
-      background: #000;
-      color: #888;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-    }
+    /* table style */
+    .cmp-table th, .cmp-table td { padding:14px 18px; border-bottom:1px solid rgba(255,255,255,0.03); }
+    .cmp-table th { color: #cdd7ff; font-weight:700; background: rgba(255,255,255,0.01); }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <div class="navbar">
-    <div class="logo">Chỉ Tech Market</div>
-    <nav>
-      <a href="#">Trang chủ</a>
-      <a href="#">Sản phẩm</a>
-      <a href="#">Đăng nhập</a>
-    </nav>
-  </div>
+  <!-- NAV -->
+  <header class="sticky top-4 z-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="nav-pill flex items-center justify-between px-6 py-3">
+        <div class="flex items-center gap-4">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-700 to-cyan-500 flex items-center justify-center text-white font-bold">A</div>
+          <div>
+            <div class="brand text-lg">Asaka<span class="text-indigo-300">Cloud</span></div>
+          </div>
+        </div>
 
-  <!-- Hero -->
-  <div class="hero">
-    <h1>Trao đổi & mua bán công nghệ</h1>
-    <p>Nền tảng giao dịch phần cứng, máy chủ, VPS, thiết bị game dành cho cộng đồng Việt Nam.</p>
-    <button class="button">Khám phá ngay</button>
-  </div>
+        <nav class="hidden md:flex gap-8 items-center text-sm text-slate-300">
+          <a href="#hero" class="hover:text-white">Trang chủ</a>
+          <a href="#features" class="hover:text-white">Asaka Cloud</a>
 
-  <!-- Card Grid -->
-  <div class="grid" id="cardGrid">
-    <div class="card" draggable="true"><h3>AMD EPYC</h3><p>CPU server hiệu năng cao</p></div>
-    <div class="card" draggable="true"><h3>RTX 4090</h3><p>Card đồ họa đỉnh cao</p></div>
-    <div class="card" draggable="true"><h3>VPS Game</h3><p>Máy chủ Minecraft, Rust</p></div>
-    <div class="card" draggable="true"><h3>RAM DDR5</h3><p>Tốc độ cực nhanh</p></div>
-    <div class="card" draggable="true"><h3>SSD NVMe</h3><p>Lưu trữ siêu tốc</p></div>
-  </div>
+          <!-- dropdown imitation -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-white">Dịch Vụ <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6"></path></svg></button>
+            <div class="absolute left-0 mt-3 bg-slate-900 rounded-md py-2 shadow-lg opacity-0 group-hover:opacity-100 transition-all pointer-events-none group-hover:pointer-events-auto" style="min-width:160px;">
+              <a class="block px-4 py-2 text-sm text-slate-300 hover:bg-white/5" href="#pricing">Gói máy chủ</a>
+              <a class="block px-4 py-2 text-sm text-slate-300 hover:bg-white/5" href="#services">Dedicated</a>
+            </div>
+          </div>
 
-  <!-- Footer -->
-  <footer>
-    © 2025 Chỉ Tech Market | Thiết kế bởi Chỉ 💙
-  </footer>
+          <a href="#support" class="hover:text-white">Hỗ Trợ <span class="ml-2 w-2 h-2 inline-block bg-green-400 rounded-full"></span></a>
+          <a href="#login" class="hover:text-white">Đăng Nhập</a>
 
-  <!-- Drag & Drop Script -->
-  <script>
-    const grid = document.getElementById('cardGrid');
-    let dragged;
+        </nav>
 
-    grid.addEventListener('dragstart', e => {
-      dragged = e.target;
-      e.target.style.opacity = 0.5;
-    });
+        <div class="md:hidden">
+          <button id="mobileToggle" class="p-2 rounded-md bg-white/5">
+            <svg class="w-5 h-5 text-slate-200" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
 
-    grid.addEventListener('dragend', e => {
-      e.target.style.opacity = '';
-    });
+      <!-- mobile menu -->
+      <div id="mobileMenu" class="mt-3 hidden">
+        <div class="glass rounded-xl p-4">
+          <a class="block py-2 px-3 text-slate-200" href="#hero">Trang chủ</a>
+          <a class="block py-2 px-3 text-slate-200" href="#features">Asaka Cloud</a>
+          <a class="block py-2 px-3 text-slate-200" href="#pricing">Gói máy chủ</a>
+          <a class="block py-2 px-3 text-slate-200" href="#support">Hỗ trợ</a>
+          <a class="block py-2 px-3 text-slate-200" href="#login">Đăng nhập</a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-    grid.addEventListener('dragover', e => {
-      e.preventDefault();
-    });
+  <!-- HERO -->
+  <section id="hero" class="hero-bg min-h-[72vh] flex items-center">
+    <div class="max-w-6xl mx-auto px-4 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div data-aos="fade-up">
+          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+            Dịch vụ cho thuê máy chủ <span class="brand">Game Việt Nam</span>
+          </h1>
+          <p class="text-slate-300 mt-4 max-w-xl">
+            Asaka Cloud tự hào là một trong những dịch vụ cho thuê máy chủ tốt nhất tại Việt Nam, cung cấp giải pháp máy chủ game chất lượng cao với giá cạnh tranh.
+          </p>
 
-    grid.addEventListener('drop', e => {
-      e.preventDefault();
-      if (e.target.classList.contains('card') && dragged !== e.target) {
-        grid.insertBefore(dragged, e.target.nextSibling);
-      }
-    });
-  </script>
+          <div class="flex gap-4 mt-6">
+            <a href="#pricing" class="px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-cyan-400 text-slate-900 font-semibold">Tạo máy chủ Game</a>
+            <a href="#contact" class="px-6 py-3 rounded-lg border border-white/10 text-slate-100">Tư vấn ngay</a>
+          </div>
+        </div>
 
-</body>
-</html>
+        <div class="relative" data-aos="fade-left">
+          <div class="glass rounded-2xl p-4">
+            <div class="text-xs text-slate-300">Server</div>
+            <div class="flex items-center justify-between mt-2">
+              <div>
+                <div class="text-sm text-slate-400">Project</div>
+                <div class="font-semibold text-lg">Minecraft VPS</div>
+              </div>
+              <div class="text-sm text-slate-400">Region: VN</div>
+            </div>
+            <div class="mt-4 bg-white/5 rounded-md p-3 flex items-center justify-between">
+              <div><div class="text-xs text-slate-400">CPU</div><div class="font-semibold">4 Core</div></div>
+              <div><div class="text-xs text-slate-400">RAM</div><div class="font-semibold">8GB</div></div>
+              <div><div class="text-xs text-slate-400">Status</div><div class="text-green-400 font-semibold">Running</div></div>
+            </div>
+            <div class="mt-4 flex gap-3">
+              <button class="flex-1 py-2 rounded-md glass">Quản lý</button>
+              <button class="py-2 px-4 rounded-md bg-indigo-600">Deploy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASAKA CLOUD GIOI THIEU (6 boxes) -->
+  <section id="features" class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold">Asaka Cloud có gì?</h2>
+        <p class="text-slate-400 mt-2 max-w-2xl mx-auto">Chúng tôi mang đến những ưu điểm vượt trội để đảm bảo trải nghiệm máy chủ tốt nhất cho bạn.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- 6 boxes -->
+        <div class="glass feature-outline p-5" data-aos="fade-up">
+          <div class="flex items-start gap-4">
+            <div class="icon-circle text-indigo-300">⚡</div>
+            <div>
+              <h4 class="font-semibold text-white">Khởi tạo tức thì</h4>
+              <p class="text-slate-400 text-sm mt-1">Máy chủ tạo và sẵn sàng trong vòng vài giây, bắt đầu chơi ngay.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass feature-outline p-5" data-aos="fade-up" data-aos-delay="80">
+          <div class="flex items-start gap-4">
+            <div class="icon-circle text-cyan-300">🛡️</div>
+            <div>
+              <h4 class="font-semibold text-white">Hỗ trợ 24/7</h4>
+              <p class="text-slate-400 text-sm mt-1">Đội kỹ thuật luôn sẵn sàng hỗ trợ bạn qua Discord và ticket.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass feature-outline p-5" data-aos="fade-up" data-aos-delay="160">
+          <div class="flex items-start gap-4">
+            <div class="icon-circle text-purple-300">🔒</div>
+            <div>
+              <h4 class="font-semibold text-white">Bảo vệ AntiDDoS Pro</h4>
+              <p class="text-slate-400 text-sm mt-1">Hệ thống phòng thủ DDoS Layer 4/7 liên tục.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass feature-outline p-5" data-aos="fade-up" data-aos-delay="240">
+          <div class="flex items-start gap-4">
+            <div class="icon-circle text-amber-300">💾</div>
+            <div>
+              <h4 class="font-semibold text-white">Sao lưu tự động</h4>
+              <p class="text-slate-400 text-sm mt-1">Sao lưu không giới hạn, khôi phục 1 click.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass feature-outline p-5" data-aos="fade-up" data-aos-delay="320">
+          <div class="flex items-start gap-4">
+            <div class="icon-circle text-lime-300">🧩</div>
+            <div>
+              <h4 class="font-semibold text-white">Cài đặt mod 1-click</h4>
+              <p class="text-slate-400 text-sm mt-1">Thư viện mod/plugin cài đặt nhanh với 1 click.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass feature-outline p-5" data-aos="fade-up" data-aos-delay="400">
+          <div class="flex items-start gap-4">
+            <div class="icon-circle text-sky-300">💸</div>
+            <div>
+              <h4 class="font-semibold text-white">Giá cả hợp lý</h4>
+              <p class="text-slate-400 text-sm mt-1">Mức giá cạnh tranh, phù hợp các túi tiền.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA small -->
+      <div class="mt-10 text-center">
+        <a class="inline-block px-6 py-3 rounded-md bg-indigo-600 text-slate-900 font-semibold" href="#pricing">Xem Chi Tiết Gói Dịch Vụ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING CARDS (demo) -->
+  <section id="pricing" class="py-12 bg-slate-900/40">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-6">Chọn gói phù hợp với nhu cầu của bạn</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- sample cards -->
+        <div class="p-6 rounded-2xl glass border border-white/6">
+          <div class="text-sm text-amber-300">MIỄN PHÍ</div>
+          <div class="text-3xl font-bold mt-3">Free</div>
+          <p class="text-slate-400 mt-2">1 project • 1 instance • 50GB</p>
+          <ul class="text-sm text-slate-300 mt-4 space-y-1">
+            <li>✔ 1-click deploy</li>
+            <li>✔ Basic monitoring</li>
+            <li>✔ Community support</li>
+          </ul>
+          <button class="mt-6 w-full py-2 rounded-md bg-white/6">Chọn gói</button>
+        </div>
+
+        <div class="p-6 rounded-2xl glass border border-white/6">
+          <div class="text-sm text-amber-300">PHỔ BIẾN</div>
+          <div class="text-3xl font-bold mt-3">Pro</div>
+          <p class="text-slate-400 mt-2">Up to 5 projects • 5 instances • 500GB</p>
+          <ul class="text-sm text-slate-300 mt-4 space-y-1">
+            <li>✔ CDN & Edge</li>
+            <li>✔ Daily backups</li>
+            <li>✔ Email support</li>
+          </ul>
+          <button class="mt-6 w-full py-2 rounded-md bg-gradient-to-r from-indigo-600 to-cyan-400 text-slate-900 font-semibold">Bắt đầu</button>
+        </div>
+
+        <div class="p-6 rounded-2xl glass border border-white/6">
+          <div class="text-sm text-amber-300">DOANH NGHIỆP</div>
+          <div class="text-3xl font-bold mt-3">Enterprise</div>
+          <p class="text-slate-400 mt-2">Tùy chỉnh • SLA • Hỗ trợ 24/7</p>
+          <ul class="text-sm text-slate-300 mt-4 space-y-1">
+            <li>✔ Dedicated support</li>
+            <li>✔ Custom SLAs</li>
+            <li>✔ Onboarding & migration</li>
+          </ul>
+          <button class="mt-6 w-full py-2 rounded-md border border-white/8">Liên hệ sales</button>
+        </div>
+      </div>
+
+      <!-- note CTA -->
+      <div class="mt-8 text-center">
+        <div class="glass inline-block px-6 py-6 rounded-xl">
+          <h3 class="text-lg font-semibold">Vẫn chưa đủ?</h3>
+          <p class="text-slate-300 mt-2">Tham khảo giải pháp Dedicated Server cho dự án cần hiệu năng cao.</p>
+          <a class="mt-4 inline-block px-5 py-2 rounded-md bg-purple-600 text-white" href="#contact">Chat tư vấn với Asaka</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHẦN CỨNG CHẤT LƯỢNG CAO -->
+  <section id="hardware" class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6">Phần cứng chất lượng cao</h2>
+      <p class="text-slate-400 max-w-3xl mb-8">Máy chủ của chúng tôi được xây dựng trên nền tảng phần cứng enterprise hàng đầu.</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+        <div class="glass p-5 rounded-xl" data-aos="fade-up">
+          <div class="text-2xl mb-2">⚙️</div>
+          <h4 class="font-semibold">CPU Server CLC</h4>
+          <p class="text-slate-400 text-sm mt-1">Intel® Xeon® Gold & AMD® Ryzen™ 9000 series.</p>
+        </div>
+
+        <div class="glass p-5 rounded-xl" data-aos="fade-up" data-aos-delay="80">
+          <div class="text-2xl mb-2">🧠</div>
+          <h4 class="font-semibold">RAM DDR4 ECC</h4>
+          <p class="text-slate-400 text-sm mt-1">ECC tự động phát hiện sửa lỗi, đảm bảo ổn định.</p>
+        </div>
+
+        <div class="glass p-5 rounded-xl" data-aos="fade-up" data-aos-delay="160">
+          <div class="text-2xl mb-2">💾</div>
+          <h4 class="font-semibold">SSD NVMe</h4>
+          <p class="text-slate-400 text-sm mt-1">Tốc độ cao, giảm lag, I/O nhanh.</p>
+        </div>
+
+        <div class="glass p-5 rounded-xl" data-aos="fade-up" data-aos-delay="240">
+          <div class="text-2xl mb-2">🌐</div>
+          <h4 class="font-semibold">Port 40Gbps</h4>
+          <p class="text-slate-400 text-sm mt-1">Băng thông lớn, latency thấp.</p>
+        </div>
+      </div>
+
+      <!-- server quality long bar -->
+      <div class="glass p-6 rounded-xl mb-8">
+        <h4 class="text-white font-semibold mb-3">Server chất lượng cao</h4>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-slate-300 text-sm">
+          <li>• Datacenter FPT/CMC/VNPT</li>
+          <li>• Bảo vệ RAID phần cứng</li>
+          <li>• Nguồn điện dự phòng</li>
+          <li>• Giám sát phần cứng 24/7</li>
+        </ul>
+      </div>
+
+      <!-- large image -->
+      <div class="rounded-xl overflow-hidden shadow-lg mb-10">
+        <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?q=80&w=1800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1c6d2f3f8f6a7c1f9a0b8f3e2f6d9cdd" alt="AMD EPYC" class="w-full object-cover h-60">
+      </div>
+    </div>
+  </section>
+
+  <!-- SOFTWARE TAGS -->
+  <section class="py-12 bg-slate-900/40">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h3 class="text-2xl font-bold mb-4">Phần mềm được hỗ trợ</h3>
+      <p class="text-slate-400 mb-6">Asaka Cloud hỗ trợ đa dạng các nền tảng và phần mềm.</p>
+
+      <div class="flex flex-wrap justify-center">
+        <span class="tag">Forge</span>
+        <span class="tag">Fabric</span>
+        <span class="tag">Sponge</span>
+        <span class="tag">Paper</span>
+        <span class="tag">Vanilla</span>
+        <span class="tag">Bedrock</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">Python</span>
+        <span class="tag">ARK</span>
+        <span class="tag">SAMP/OP</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="py-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <h3 class="text-2xl font-bold text-center mb-6">So sánh các loại dịch vụ máy chủ</h3>
+
+      <div class="overflow-hidden rounded-xl">
+        <table class="w-full cmp-table text-left">
+          <thead>
+            <tr>
+              <th class="w-1/3">Tính năng</th>
+              <th class="w-1/3">Asaka Cloud</th>
+              <th class="w-1/3">Dịch vụ khác</th>
+            </tr>
+          </thead>
+          <tbody class="bg-transparent">
+            <tr><td>Hiệu năng</td><td>Cao</td><td>Trung bình</td></tr>
+            <tr><td>Khởi tạo nhanh</td><td>Nhanh chóng, dưới 15s</td><td>Tùy CPU</td></tr>
+            <tr><td>Bảo vệ DDoS</td><td>AntiDDoS Pro</td><td>Cơ bản</td></tr>
+            <tr><td>Sao lưu tự động</td><td>Có</td><td>?</td></tr>
+            <tr><td>Cài đặt mod/plugin</td><td>1-click</td><td>Thủ công</td></tr>
+            <tr><td>Hỗ trợ kỹ thuật</td><td>24/7</td><td>Có giới hạn</td></tr>
+            <tr><td>Giá thành</td><td>Hợp lý</td><td>Trung bình/cao</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-12 bg-slate-900/30">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h3 class="text-2xl font-bold mb-6">Khách hàng nói gì về chúng tôi</h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="testimonial" data-aos="fade-right">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-200">U</div>
+            <div class="text-left">
+              <div class="font-semibold">@sun***ukii</div>
+              <div class="text-xs text-slate-400">Khách hàng tại Asaka Cloud</div>
+            </div>
+          </div>
+          <p class="mt-3 text-slate-300">"Xin quá không biết khen như nào ncv"</p>
+        </div>
+
+        <div class="testimonial" data-aos="fade-left">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-200">T</d

@@ -2,46 +2,177 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>XPLC Cloud</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+  <title>Dịch vụ thuê máy chủ Game</title>
+  <!-- Font chữ Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #0f0f0f;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* Banner với ảnh nền xanh dương */
+    .hero {
+      background-image: url('https://hoanghamobile.com/tin-tuc/wp-content/uploads/2024/05/anh-mau-xanh-duong-42.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .hero h1, .hero p, .buttons {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #ffffff;
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+      color: #dddddd;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .button {
+      background: linear-gradient(90deg, #ff00cc, #3333ff, #00ffff);
+      color: white;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-size: 300% 300%;
+      animation: gradientMove 5s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    }
+
+    /* Section */
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: #1a1a1a;
+    }
+
+    .section h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #00ffff;
+    }
+
+    .section p {
+      font-size: 16px;
+      color: #cccccc;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* 3 ảnh nằm ngang */
+    .features {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .feature-box {
+      width: 300px;
+      background-color: #222;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,255,255,0.1);
+    }
+
+    .feature-box img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .feature-box h3 {
+      color: #00ffff;
+      font-size: 18px;
+      margin: 0;
+    }
+
+    /* Footer */
+    footer {
+      background: #000000;
+      color: #888888;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="xplc-logo.png" alt="XPLC TEAM" height="50">
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#">Trang chủ</a></li>
-        <li><a href="#">Dịch vụ</a></li>
-        <li><a href="#">Hỗ trợ</a></li>
-        <li><a href="#">Đăng nhập</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <section class="hero">
+  <!-- Banner -->
+  <div class="hero">
     <h1>Dịch vụ cho thuê máy chủ Game Việt Nam</h1>
-    <p>XPLC Cloud tự hào cung cấp giải pháp lưu trữ và vận hành máy chủ chất lượng cao với giá cả phải chăng.</p>
+    <p>Asaka Cloud tự hào là một trong những dịch vụ thuê máy chủ tốt nhất tại Việt Nam, cung cấp giải pháp lưu trữ và truyền tải dữ liệu với chất lượng cao và giá cả phải chăng.</p>
     <div class="buttons">
-      <a href="#" class="btn">Tạo máy chủ Game</a>
-      <a href="#" class="btn secondary">Tư vấn miễn phí</a>
+      <button class="button">Tạo máy chủ Game</button>
+      <button class="button">Tư vấn ngay và miễn phí</button>
     </div>
-  </section>
+  </div>
 
-  <section class="features">
-    <h2>XPLC Cloud có gì?</h2>
-    <div class="grid">
-      <div class="card">⚡ Khởi tạo nhanh</div>
-      <div class="card">🛡️ Anti-DDoS Pro</div>
-      <div class="card">🔧 Plugin 1-click</div>
-      <div class="card">💾 Sao lưu tự động</div>
-    </div>
-  </section>
+  <!-- Section -->
+  <div class="section">
+    <h2>Asaka Cloud có gì?</h2>
+    <p>Hạ tầng mạnh mẽ, tốc độ cao, hỗ trợ kỹ thuật 24/7, giá cả cạnh tranh, bảo mật tối ưu và khả năng mở rộng linh hoạt cho mọi nhu cầu game thủ.</p>
 
-  <footer>
-    <p>© 2025 XPLC TEAM. Dựng lại từ AsakaCloud.vn</p>
-  </footer>
-</body>
-</html>
+    <div class="features">
+      <div class="feature-box">
+        <img src="https://cdn.tgdd.vn/Files/2021/03/17/1336036/cpu-la-gi-cau-tao-va-chuc-nang-cua-cpu-trong-may-tinh-202103171132092632.jpg" alt="Chip">
+        <h3>Chip xử lý mạnh mẽ</h3>
+      </div>
+      <div class="feature-box">
+        <img src="https://media.istockphoto.com/id/1312706424/photo/server-room-interior-in-data-center.jpg?s=612x612&w=0&k=20&c=YxqkYQwYvZkQZKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZz

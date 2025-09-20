@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dịch vụ thuê máy chủ Game</title>
-  <!-- Font chữ Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ASAKA CLOUD</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -15,20 +18,68 @@
       overflow-x: hidden;
     }
 
-    /* Banner với ảnh nền xanh dương */
+    /* Snowflakes */
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      animation: fall linear infinite;
+      z-index: 9999;
+      opacity: 0.7;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+
+    /* Navbar */
+    .navbar {
+      background: #000;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      color: #00bfff;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .navbar nav a {
+      color: white;
+      margin-left: 16px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .navbar nav a.login {
+      background: #00ffff;
+      color: #000;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+
+    /* Hero */
     .hero {
-      background-image: url('https://hoanghamobile.com/tin-tuc/wp-content/uploads/2024/05/anh-mau-xanh-duong-42.jpg');
+      background-image: url('https://raw.githubusercontent.com/chi/chi-website/main/images/epyc.jpg'); /* Thay bằng link ảnh chip AMD EPYC */
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 0 20px;
       position: relative;
+      padding: 100px 20px;
+      text-align: center;
     }
 
     .hero::before {
@@ -36,34 +87,33 @@
       position: absolute;
       inset: 0;
       background: rgba(0, 0, 0, 0.6);
-      z-index: 1;
     }
 
-    .hero h1, .hero p, .buttons {
+    .hero h1,
+    .hero p,
+    .hero .buttons {
       position: relative;
-      z-index: 2;
+      z-index: 1;
     }
 
     .hero h1 {
       font-size: 32px;
+      color: #00ffff;
       margin-bottom: 20px;
-      color: #ffffff;
-      text-shadow: 0 0 10px #00ffff;
     }
 
     .hero p {
       font-size: 18px;
       max-width: 600px;
-      margin-bottom: 30px;
-      line-height: 1.6;
-      color: #dddddd;
+      margin: 0 auto 30px;
+      color: #ddd;
     }
 
     .buttons {
       display: flex;
+      justify-content: center;
       gap: 20px;
       flex-wrap: wrap;
-      justify-content: center;
     }
 
     .button {
@@ -72,23 +122,16 @@
       padding: 14px 28px;
       border: none;
       border-radius: 8px;
-      font-size: 16px;
       font-weight: bold;
       cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      background-size: 300% 300%;
       animation: gradientMove 5s ease infinite;
+      background-size: 300% 300%;
     }
 
     @keyframes gradientMove {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
-    }
-
-    .button:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 20px rgba(255,255,255,0.3);
     }
 
     /* Section */
@@ -99,80 +142,97 @@
     }
 
     .section h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
+      font-size: 26px;
       color: #00ffff;
+      margin-bottom: 20px;
     }
 
     .section p {
-      font-size: 16px;
-      color: #cccccc;
+      font-size: 15px;
+      color: #ccc;
       max-width: 600px;
       margin: 0 auto;
-      line-height: 1.6;
     }
 
-    /* 3 ảnh nằm ngang */
-    .features {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 40px;
-    }
-
-    .feature-box {
-      width: 300px;
-      background-color: #222;
+    /* Form */
+    .form-box {
+      background: #222;
+      padding: 30px;
       border-radius: 10px;
-      padding: 20px;
-      text-align: center;
+      max-width: 320px;
+      margin: 40px auto;
       box-shadow: 0 0 10px rgba(0,255,255,0.1);
     }
 
-    .feature-box img {
+    .form-box input {
       width: 100%;
-      border-radius: 8px;
-      margin-bottom: 10px;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 6px;
+      background: #333;
+      color: white;
     }
 
-    .feature-box h3 {
-      color: #00ffff;
-      font-size: 18px;
-      margin: 0;
+    .form-box button {
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
     }
 
     /* Footer */
     footer {
-      background: #000000;
-      color: #888888;
-      padding: 20px;
+      background: #000;
+      color: #888;
       text-align: center;
+      padding: 20px;
       font-size: 14px;
     }
   </style>
 </head>
 <body>
+  <!-- Snowflakes -->
+  <script>
+    for (let i = 0; i < 50; i++) {
+      let snow = document.createElement('div');
+      snow.className = 'snowflake';
+      snow.style.left = Math.random() * window.innerWidth + 'px';
+      snow.style.animationDuration = (5 + Math.random() * 5) + 's';
+      snow.style.animationDelay = Math.random() * 5 + 's';
+      document.body.appendChild(snow);
+    }
+  </script>
 
-  <!-- Banner -->
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">ASAKA CLOUD</div>
+    <nav>
+      <a href="#">Asaka Cloud</a>
+      <a href="#">Dịch Vụ ▼</a>
+      <a href="#">Hỗ Trợ ●</a>
+      <a href="#" class="login">Đăng Nhập</a>
+    </nav>
+  </div>
+
+  <!-- Hero -->
   <div class="hero">
     <h1>Dịch vụ cho thuê máy chủ Game Việt Nam</h1>
-    <p>Asaka Cloud tự hào là một trong những dịch vụ thuê máy chủ tốt nhất tại Việt Nam, cung cấp giải pháp lưu trữ và truyền tải dữ liệu với chất lượng cao và giá cả phải chăng.</p>
+    <p>Asaka Cloud tự hào là một trong những đơn vị cho thuê máy chủ tại Việt Nam, cung cấp giải pháp lưu trữ cho các trò chơi trực tuyến chất lượng cao với giá cả phải chăng.</p>
     <div class="buttons">
       <button class="button">Tạo máy chủ Game</button>
-      <button class="button">Tư vấn ngay và miễn phí</button>
+      <button class="button">Tìm hiểu về máy chủ</button>
     </div>
   </div>
 
   <!-- Section -->
   <div class="section">
     <h2>Asaka Cloud có gì?</h2>
-    <p>Hạ tầng mạnh mẽ, tốc độ cao, hỗ trợ kỹ thuật 24/7, giá cả cạnh tranh, bảo mật tối ưu và khả năng mở rộng linh hoạt cho mọi nhu cầu game thủ.</p>
+    <p>Khởi tạo tức thì, hỗ trợ 24/7, bảo vệ AntiDDOS Pro, sao lưu không giới hạn, đa dạng mô hình, giá cả hợp lý.</p>
+  </div>
 
-    <div class="features">
-      <div class="feature-box">
-        <img src="https://cdn.tgdd.vn/Files/2021/03/17/1336036/cpu-la-gi-cau-tao-va-chuc-nang-cua-cpu-trong-may-tinh-202103171132092632.jpg" alt="Chip">
-        <h3>Chip xử lý mạnh mẽ</h3>
-      </div>
-      <div class="feature-box">
-        <img src="https://media.istockphoto.com/id/1312706424/photo/server-room-interior-in-data-center.jpg?s=612x612&w=0&k=20&c=YxqkYQwYvZkQZKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZzFJXKXKZz
+  <!-- Tạo tài khoản -->

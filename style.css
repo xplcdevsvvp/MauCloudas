@@ -1,7 +1,29 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: #10131a;
+  background: url('epyccpu-n31.png') center/cover no-repeat fixed;
+  position: relative;
+/* Hiệu ứng hình vuông xoay */
+.rotating-square {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(120deg,#4f8cff,#7f5af0);
+  opacity: 0.18;
+  border-radius: 12px;
+  animation: rotateSquare 4s linear infinite;
+  z-index: 0;
+}
+@keyframes rotateSquare {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+/* Tiêu đề phóng to khi scroll */
+h1.big-title {
+  transition: transform 0.4s cubic-bezier(.4,2,.3,1);
+}
   color: #fff;
 }
 

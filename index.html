@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-                <nav id="navbar-dynamic" class="navbar-container fade-in" style="backdrop-filter: blur(12px);background:linear-gradient(90deg,rgba(0,75,107,0.7),rgba(0,103,153,0.7));padding:24px 40px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 4px 24px rgba(0,0,0,0.18);border-radius:32px;margin:18px 24px 0 24px;position:sticky;top:0;z-index:999;transition:all 0.3s cubic-bezier(.4,2,.3,1);">
+<nav id="navbar-dynamic" class="navbar-container fade-in" style="backdrop-filter: blur(12px);background:linear-gradient(90deg,rgba(0,75,107,0.7),rgba(0,103,153,0.7));padding:24px 40px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 4px 24px rgba(0,0,0,0.18);border-radius:32px;margin:18px 24px 0 24px;position:sticky;top:0;z-index:999;transition:all 0.3s cubic-bezier(.4,2,.3,1);">
             <div class="navbar-logo" style="display:flex;align-items:center;gap:8px;">
                 <img id="navbar-logo" src="xplc-logo.png" alt="Logo" style="height:44px;width:44px;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,0.18);background:rgba(255,255,255,0.7);backdrop-filter:blur(2px);transition:all 0.3s cubic-bezier(.4,2,.3,1);">
                 <span id="navbar-title" style="font-weight:bold;font-size:1.4rem;color:#fff;text-shadow:0 2px 8px #004b6b80;transition:all 0.3s cubic-bezier(.4,2,.3,1);">AsakaCloud.vn</span>
@@ -19,17 +19,18 @@
                 <li><a href="#contact" style="color:#fff;text-decoration:none;font-weight:500;padding:8px 18px;border-radius:12px;transition:background 0.2s;">Liên hệ</a></li>
             </ul>
             <div class="navbar-actions" style="display:flex;gap:12px;">
-                <button class="cta-btn main-btn" style="backdrop-filter:blur(2px);background:linear-gradient(90deg,#004b6b,#006799);color:#fff;box-shadow:0 2px 8px #004b6b40;" onclick="openModal('login-modal')">Đăng Nhập</button>
-                <button class="cta-btn alt-btn" style="backdrop-filter:blur(2px);background:linear-gradient(90deg,#7f5af0,#4f8cff);color:#fff;box-shadow:0 2px 8px #7f5af040;" onclick="openModal('register-modal')">Đăng Ký</button>
+                <button class="cta-btn main-btn" style="backdrop-filter:blur(2px);background:linear-gradient(90deg,#004b6b,#006799);color:#fff;box-shadow:0 2px 8px #004b6b40;position:fixed;top:32px;right:120px;z-index:1000;" onclick="openModal('login-modal')">Đăng Nhập</button>
+                <button class="cta-btn alt-btn" style="backdrop-filter:blur(2px);background:linear-gradient(90deg,#7f5af0,#4f8cff);color:#fff;box-shadow:0 2px 8px #7f5af040;position:fixed;top:32px;right:32px;z-index:1000;" onclick="openModal('register-modal')">Đăng Ký</button>
             </div>
         </nav>
 
         <!-- Hero Section -->
             <section class="hero fade-in">
+    <div class="rotating-square" style="top:40px;left:40px;"></div>
                 <div class="hero-bg" style="background:url('epyccpu-n31.png') center/cover no-repeat;position:absolute;top:0;left:0;width:100%;height:100%;filter:brightness(0.45) blur(1.5px);z-index:1;"></div>
                 <div class="hero-overlay" style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(120deg,rgba(0,75,107,0.7),rgba(127,90,240,0.6));z-index:2;"></div>
                 <div class="hero-content" style="position:relative;z-index:3;">
-                <h1><span>Dịch vụ cho thuê máy chủ <span class="gradient-text">Game Việt Nam</span></span></h1>
+                <h1 class="big-title"><span>Dịch vụ cho thuê máy chủ <span class="gradient-text">Game Việt Nam</span></span></h1>
                 <p>Asaka Cloud tự hào là một trong những dịch vụ cho thuê máy chủ trò chơi trực tuyến tốt nhất tại Việt Nam, cung cấp giải pháp lưu trữ máy chủ trò chơi trực tuyến chất lượng cao với giá cả phải chăng.</p>
                 <div class="hero-actions">
                     <button class="cta-btn main-btn">Tạo máy chủ Game</button>
@@ -42,6 +43,7 @@
 
         <!-- Section: Asaka Cloud có gì? -->
         <section class="features fade-in">
+    <div class="rotating-square" style="top:0;right:80px;"></div>
             <h2>Asaka Cloud có gì?</h2>
             <div class="features-list">
                 <div class="feature-card">
@@ -69,6 +71,7 @@
 
         <!-- Section: Bảng giá dịch vụ -->
         <section class="pricing fade-in">
+    <div class="rotating-square" style="top:0;left:50%;"></div>
             <h2>Chọn gói phù hợp với nhu cầu của bạn</h2>
             <div class="pricing-list">
                 <div class="pricing-card pricing-dedicated">
@@ -130,6 +133,7 @@
 
         <!-- Section: Phần cứng -->
         <section class="hardware fade-in">
+    <div class="rotating-square" style="bottom:0;right:80px;"></div>
             <div class="hardware-list">
                 <div class="hardware-card">
                         <img src="epyccpu-n31.png" alt="AMD EPYC" class="hardware-img">
@@ -161,6 +165,7 @@
 
         <!-- Call to action -->
         <section class="cta-section fade-in">
+    <div class="rotating-square" style="bottom:0;left:80px;"></div>
             <div class="cta-box">
                 <h2>Bạn muốn tạo máy chủ Game?</h2>
                 <p>Hệ thống bảo mật cao và đội ngũ hỗ trợ 24/7 luôn sẵn sàng phục vụ bạn.</p>
@@ -173,6 +178,7 @@
 
         <!-- Footer -->
         <footer class="footer fade-in">
+    <div class="rotating-square" style="bottom:0;right:20px;"></div>
             <div class="footer-cols">
                 <div>
                     <h4>Dịch Vụ</h4>
@@ -201,6 +207,8 @@
             <div class="footer-bottom">© 2022 - 2025 AsakaCloud.vn. Mọi quyền được bảo lưu.</div>
 
         </footer>
+
+        <!-- Modal Popup Login -->
 
         <!-- Modal Popup Login -->
         <div id="login-modal" class="modal">

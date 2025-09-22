@@ -6,56 +6,35 @@ body {
   letter-spacing: 2px;
   text-shadow:
     0 0 8px #00e6e6,
-    0 0 16px #00334d,
-    0 0 32px #00e6e6;
-}
-.neon-title span {
-  animation: neonLetter 1.2s infinite alternate;
-  display: inline-block;
-}
-@keyframes neonLetter {
-  0% { text-shadow: 0 0 8px #00e6e6, 0 0 16px #00334d; }
-  100% { text-shadow: 0 0 16px #00e6e6, 0 0 32px #00e6e6; color: #fff; }
-}
-/* Neon button effect */
-.main-btn, .cta-btn {
-  box-shadow: 0 0 12px #00e6e6, 0 0 24px #00334d;
-  animation: neonBtn 1.5s infinite alternate;
-}
-@keyframes neonBtn {
-  0% { box-shadow: 0 0 12px #00e6e6, 0 0 24px #00334d; }
-  100% { box-shadow: 0 0 24px #00e6e6, 0 0 48px #00e6e6; }
-}
-@keyframes hangingSwing {
-  0% { transform: rotate(-7deg); }
-  50% { transform: rotate(7deg); }
-  100% { transform: rotate(-7deg); }
-}
-  margin: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  font-size: 0.95rem;
-  background: linear-gradient(120deg, #07111c 0%, #0a2342 60%, #00334d 100%);
-  background-attachment: fixed;
-  color: #eaf6fb;
+  /* Footer extra */
+/* Footer extra */
+body {
   overflow-x: hidden;
   position: relative;
+}
 /* Hiệu ứng hình vuông xoay */
+  .social-links a {
 .rotating-square {
   position: absolute;
+  .social-links a:hover {
   width: 60px;
   height: 60px;
   background: linear-gradient(120deg,#0a2342,#4f8cff,#7f5af0);
+  .footer-content img {
   opacity: 0.18;
   border-radius: 12px;
   animation: rotateSquare 4s linear infinite;
+  .footer-content img:hover {
   z-index: 0;
 }
+  .glass {
 @keyframes rotateSquare {
   0% { transform: rotate(0deg) scale(1); }
   50% { transform: rotate(180deg) scale(1.2); }
   100% { transform: rotate(360deg) scale(1); }
 }
 
+  .gallery-popup {
 /* Tiêu đề phóng to khi scroll */
 h1.big-title {
   transition: transform 0.4s cubic-bezier(.4,2,.3,1);
@@ -63,20 +42,7 @@ h1.big-title {
   color: #fff;
 }
 
-.hero {
-  position: relative;
-  min-height: 480px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 80px 20px 40px 20px;
-  overflow: hidden;
-}
-.hero-bg {
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: linear-gradient(120deg, #0a2342 0%, #4f8cff 60%, #7f5af0 100%);
+body {
   opacity: 0.82;
   filter: blur(8px);
   z-index: 1;
@@ -92,20 +58,7 @@ h1.big-title {
   font-size: 2.8rem;
   transition: transform 0.4s cubic-bezier(.4,2,.3,1);
 }
-@media (max-width: 600px) {
-  h1.big-title {
-    font-size: 2.1rem;
-  }
-}
-h1.big-title {
-  font-weight: 800;
-  margin-bottom: 18px;
-  line-height: 1.2;
-}
-.gradient-text {
-  background: linear-gradient(90deg,#4f8cff,#7f5af0);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+body {
   background-clip: text;
   color: transparent;
 }
@@ -209,56 +162,30 @@ h1.big-title {
   border-radius: 18px;
   padding: 32px 24px;
   width: 260px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-  text-align: left;
-  position: relative;
-  border: 1.5px solid #23283b;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.pricing-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-  border-color: #7f5af0;
-}
-.pricing-card .badge {
-  position: absolute;
-  top: -18px;
-  left: 18px;
-  padding: 4px 14px;
-  border-radius: 12px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-}
-.badge-orange { background: linear-gradient(90deg,#ff9800,#ff6f00); }
-.badge-green { background: linear-gradient(90deg,#43ea7f,#1abc9c); }
-.badge-blue { background: linear-gradient(90deg,#4f8cff,#7f5af0); }
-.badge-purple { background: linear-gradient(90deg,#7f5af0,#4f8cff); }
-.pricing-card h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
+.footer-extra {
 .pricing-card .desc {
   font-size: 1rem;
   color: #b3b9c9;
+.social-links a {
   margin-bottom: 12px;
 }
+.social-links a:hover {
 .pricing-card ul {
   padding-left: 18px;
   margin-bottom: 18px;
-}
 .pricing-card ul li {
   font-size: 0.98rem;
+.footer-content img:hover {
   margin-bottom: 6px;
 }
+.glass {
 .pricing-card .price {
   font-size: 1.1rem;
   font-weight: 700;
   color: #43ea7f;
 }
 .pricing-card .price span {
+.gallery-popup {
   color: #4f8cff;
 }
 
@@ -396,6 +323,10 @@ h1.big-title {
 
 /* Fade-in animation */
 .fade-in {
+  opacity: 0;
+  transform: translateY(48px) scale(0.98);
+  transition: opacity 0.8s, transform 0.8s cubic-bezier(.4,2,.3,1);
+}
   animation: fadeIn 1.2s ease-in-out;
 }
 @keyframes fadeIn {

@@ -1,19 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>Đăng nhập</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Đăng Nhập - #Xplc Cloud</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
-  <div class="form-container">
-    <h2>Đăng nhập</h2>
-    <form>
-      <input type="text" placeholder="Tên đăng nhập" required>
-      <input type="password" placeholder="Mật khẩu" required>
-      <button type="submit">Đăng nhập</button>
+<body class="bg-light-background dark:bg-dark-background text-light-text dark:text-dark-text">
+  <header class="bg-light-navbar dark:bg-dark-navbar p-4 shadow-md">
+    <div class="flex justify-between items-center">
+      <div class="text-2xl font-bold text-light-heading dark:text-dark-heading">
+        <a href="index.html">#Xplc Cloud</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="max-w-lg mx-auto py-16">
+    <h2 class="text-3xl text-center text-light-heading dark:text-dark-heading mb-6">Đăng Nhập</h2>
+    <form action="#" method="post" class="space-y-4">
+      <div>
+        <label for="email" class="block text-sm">Email</label>
+        <input type="email" id="email" name="email" class="w-full p-3 border border-light-shadow2 dark:border-dark-shadow2 rounded-lg" required>
+      </div>
+      <div>
+        <label for="password" class="block text-sm">Mật khẩu</label>
+        <input type="password" id="password" name="password" class="w-full p-3 border border-light-shadow2 dark:border-dark-shadow2 rounded-lg" required>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="px-6 py-3 bg-light-shadow2 dark:bg-dark-shadow2 text-dark-text dark:text-dark-text rounded-lg">
+          Đăng Nhập
+        </button>
+      </div>
     </form>
-    <p>Chưa có tài khoản? <a href="register.html">Đăng ký</a></p>
-  </div>
+  </section>
+
+  <footer class="py-12 bg-light-shadow1 dark:bg-dark-shadow1 text-light-text dark:text-dark-text">
+    <div class="container mx-auto px-4 text-center">
+      <p>© 2022 - 2025 #Xplc Cloud</p>
+    </div>
+  </footer>
 </body>
 </html>

@@ -1,10 +1,3 @@
-Bạn đang yêu cầu tôi điều chỉnh lại `index.html` và bỏ qua phần liên quan đến `style.css` vì có thể bạn đang gặp lỗi "Could not resolve '/style.css' from '/index.html'". Lỗi này thường xuất hiện trong các môi trường phát triển (development environments) khi trình duyệt hoặc công cụ build không tìm thấy tệp CSS được tham chiếu.
-
-Việc xóa dòng `link rel="stylesheet" href="style.css"` sẽ khiến trang web mất đi toàn bộ phong cách đã định nghĩa trong `style.css`. Nếu mục đích của bạn là sửa lỗi, thì có thể bạn cần kiểm tra lại đường dẫn của tệp CSS hoặc cách bạn cấu hình môi trường phát triển của mình.
-
-Tuy nhiên, nếu bạn vẫn muốn xóa, đây là phiên bản `index.html` đã được lược bỏ dòng liên kết đến `style.css`:
-
-```html
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -12,120 +5,122 @@ Tuy nhiên, nếu bạn vẫn muốn xóa, đây là phiên bản `index.html` �
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tên Website Của Bạn - Dịch Vụ Hosting Game & VPS Hàng Đầu Việt Nam</title>
     <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <!-- Thêm các font chữ đặc biệt nếu có (ví dụ: Google Fonts) -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <!-- Liên kết với file CSS để tạo kiểu dáng và hiệu ứng -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Liên kết FontAwesome để sử dụng các icon (nếu cần) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts (ví dụ) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header class="main-header">
         <div class="container">
             <div class="logo">
                 <a href="/">
-                    <!-- Thay thế bằng logo của bạn -->
                     <img src="images/logo-yourwebsite.png" alt="Logo Tên Website Của Bạn">
                 </a>
             </div>
             <nav class="main-nav">
                 <ul>
                     <li><a href="/">Trang Chủ</a></li>
-                    <li><a href="#dich-vu">Dịch Vụ</a>
+                    <li><a href="#services">Dịch Vụ</a>
                         <ul class="submenu">
                             <li><a href="/hosting-minecraft">Hosting Minecraft</a></li>
                             <li><a href="/vps-game">VPS Game</a></li>
-                            <li><a href="/physical-server">Máy Chủ Vật Lý</a></li>
-                            <li><a href="/modded-hosting">Modded Hosting</a></li>
-                            <!-- Thêm các dịch vụ khác nếu có -->
+                            <li><a href="/dedicated-server">Máy Chủ Vật Lý</a></li>
+                            <li><a href="/cloud-server">Cloud Server</a></li>
                         </ul>
                     </li>
-                    <li><a href="#bang-gia">Bảng Giá</a></li>
-                    <li><a href="#ho-tro">Hỗ Trợ</a></li>
-                    <li><a href="#lien-he">Liên Hệ</a></li>
+                    <li><a href="#pricing">Bảng Giá</a></li>
+                    <li><a href="#support">Hỗ Trợ</a></li>
+                    <li><a href="#contact">Liên Hệ</a></li>
                 </ul>
             </nav>
             <div class="auth-buttons">
-                <a href="/login" class="btn btn-login">Đăng Nhập</a>
-                <a href="/register" class="btn btn-register">Đăng Ký</a>
+                <button class="btn btn-login" onclick="openModal('loginModal')">Đăng Nhập</button>
+                <button class="btn btn-register" onclick="openModal('registerModal')">Đăng Ký</button>
             </div>
             <button class="mobile-nav-toggle" aria-controls="main-nav" aria-expanded="false">
                 <span class="sr-only">Menu</span>
+                <i class="fas fa-bars"></i>
             </button>
         </div>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section id="hero" class="hero-section">
+        <section id="hero" class="hero-section fade-in">
             <div class="container">
                 <div class="hero-content">
-                    <h1>Dịch Vụ Hosting & VPS Số 1 Tại Việt Nam</h1>
-                    <p>Tự hào là dịch vụ cho thuê máy chủ Game như Minecraft hàng đầu tại Việt Nam, cung cấp giải pháp lưu trữ máy chủ trò chơi trực tuyến chất lượng cao.</p>
+                    <h1>Dịch Vụ Hosting & VPS Hàng Đầu Việt Nam</h1>
+                    <p class="animate-text">Tự hào là dịch vụ cho thuê máy chủ game chất lượng cao, cung cấp giải pháp lưu trữ mạnh mẽ cho mọi nhu cầu.</p>
                     <div class="hero-actions">
-                        <a href="#dich-vu" class="btn btn-primary">Khám Phá Dịch Vụ</a>
-                        <a href="#bang-gia" class="btn btn-secondary">Xem Bảng Giá</a>
+                        <a href="#services" class="btn btn-primary hover-scale">Khám Phá Dịch Vụ</a>
+                        <a href="#pricing" class="btn btn-secondary hover-scale">Xem Bảng Giá</a>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <!-- Ảnh minh họa cho dịch vụ hosting/game -->
+                <div class="hero-image animate-float">
                     <img src="images/hero-image.png" alt="Hosting Game">
                 </div>
             </div>
         </section>
 
         <!-- Features/Services Section -->
-        <section id="dich-vu" class="services-section">
+        <section id="services" class="services-section fade-in">
             <div class="container">
-                <h2>Dịch Vụ Nổi Bật</h2>
+                <h2 class="section-title">Dịch Vụ Nổi Bật</h2>
                 <div class="service-cards">
-                    <div class="card">
+                    <div class="card hover-scale">
                         <img src="images/icon-minecraft.png" alt="Hosting Minecraft">
                         <h3>Hosting Minecraft</h3>
                         <p>Máy chủ Minecraft ổn định, hiệu năng cao, chống DDoS.</p>
-                        <a href="/hosting-minecraft" class="btn-link">Tìm hiểu thêm</a>
+                        <a href="/hosting-minecraft" class="btn-link">Tìm hiểu thêm <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <div class="card">
+                    <div class="card hover-scale">
                         <img src="images/icon-vps.png" alt="VPS Game">
                         <h3>VPS Game</h3>
                         <p>Máy chủ ảo riêng tốc độ cao dành cho mọi loại game.</p>
-                        <a href="/vps-game" class="btn-link">Tìm hiểu thêm</a>
+                        <a href="/vps-game" class="btn-link">Tìm hiểu thêm <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <div class="card">
-                        <img src="images/icon-performance.png" alt="Performance Hosting">
-                        <h3>Performance Hosting</h3>
-                        <p>Máy chủ hiệu năng vượt trội cho trải nghiệm game mượt mà.</p>
-                        <a href="/performance-hosting" class="btn-link">Tìm hiểu thêm</a>
+                    <div class="card hover-scale">
+                        <img src="images/icon-dedicated.png" alt="Dedicated Server">
+                        <h3>Máy Chủ Vật Lý</h3>
+                        <p>Giải pháp mạnh mẽ, độc lập cho các dự án lớn.</p>
+                        <a href="/dedicated-server" class="btn-link">Tìm hiểu thêm <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <div class="card">
-                        <img src="images/icon-modpack.png" alt="Modded Hosting">
-                        <h3>Modded Minecraft Hosting</h3>
-                        <p>Hỗ trợ Pixelmon, RLCraft và hàng nghìn modpack khác.</p>
-                        <a href="/modded-hosting" class="btn-link">Tìm hiểu thêm</a>
+                    <div class="card hover-scale">
+                        <img src="images/icon-cloud.png" alt="Cloud Server">
+                        <h3>Cloud Server</h3>
+                        <p>Linh hoạt, mở rộng dễ dàng với công nghệ điện toán đám mây.</p>
+                        <a href="/cloud-server" class="btn-link">Tìm hiểu thêm <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Why Choose Us Section -->
-        <section id="why-us" class="why-us-section bg-light">
+        <section id="why-us" class="why-us-section bg-gradient fade-in">
             <div class="container">
-                <h2>Tại Sao Chọn Chúng Tôi?</h2>
+                <h2 class="section-title">Tại Sao Chọn Chúng Tôi?</h2>
                 <div class="why-us-grid">
-                    <div class="feature-item">
-                        <img src="images/icon-uptime.png" alt="Uptime">
+                    <div class="feature-item hover-scale">
+                        <i class="fas fa-signal icon-large"></i>
                         <h3>Uptime 99.9%</h3>
                         <p>Đảm bảo máy chủ hoạt động liên tục, không gián đoạn.</p>
                     </div>
-                    <div class="feature-item">
-                        <img src="images/icon-support.png" alt="Support">
+                    <div class="feature-item hover-scale">
+                        <i class="fas fa-headset icon-large"></i>
                         <h3>Hỗ Trợ 24/7</h3>
                         <p>Đội ngũ kỹ thuật viên luôn sẵn sàng hỗ trợ bạn.</p>
                     </div>
-                    <div class="feature-item">
-                        <img src="images/icon-antiddos.png" alt="Anti DDoS">
+                    <div class="feature-item hover-scale">
+                        <i class="fas fa-shield-alt icon-large"></i>
                         <h3>Chống DDoS Mạnh Mẽ</h3>
                         <p>Bảo vệ máy chủ của bạn khỏi mọi cuộc tấn công.</p>
                     </div>
-                    <div class="feature-item">
-                        <img src="images/icon-performance-opt.png" alt="Performance Optimization">
+                    <div class="feature-item hover-scale">
+                        <i class="fas fa-tachometer-alt icon-large"></i>
                         <h3>Tối Ưu Hiệu Năng</h3>
                         <p>Cấu hình mạnh mẽ, tối ưu cho Game Server.</p>
                     </div>
@@ -133,104 +128,101 @@ Tuy nhiên, nếu bạn vẫn muốn xóa, đây là phiên bản `index.html` �
             </div>
         </section>
 
-        <!-- Pricing Section (example, simplify for initial build) -->
-        <section id="bang-gia" class="pricing-section">
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing-section fade-in">
             <div class="container">
-                <h2>Bảng Giá Dịch Vụ</h2>
+                <h2 class="section-title">Bảng Giá Dịch Vụ</h2>
                 <div class="pricing-tabs">
-                    <button class="tab-button active" data-target="minecraft-pricing">Hosting Minecraft</button>
-                    <button class="tab-button" data-target="vps-pricing">VPS Game</button>
+                    <button class="tab-button active hover-scale" data-target="minecraft-pricing">Hosting Minecraft</button>
+                    <button class="tab-button hover-scale" data-target="vps-pricing">VPS Game</button>
+                    <button class="tab-button hover-scale" data-target="dedicated-pricing">Máy Chủ Vật Lý</button>
                 </div>
                 <div id="minecraft-pricing" class="pricing-content active">
                     <div class="pricing-plans">
-                        <!-- Mẫu gói Hosting Minecraft -->
-                        <div class="plan-card">
+                        <div class="plan-card hover-scale">
                             <h3>Gói Đồng</h3>
-                            <p class="price">99.000đ/tháng</p>
+                            <p class="price">99.000đ<span>/tháng</span></p>
                             <ul>
-                                <li>2GB RAM</li>
-                                <li>1 CPU Core</li>
-                                <li>20GB SSD</li>
-                                <li>Chống DDoS cơ bản</li>
+                                <li><i class="fas fa-check"></i> 2GB RAM</li>
+                                <li><i class="fas fa-check"></i> 1 CPU Core</li>
+                                <li><i class="fas fa-check"></i> 20GB SSD NVMe</li>
+                                <li><i class="fas fa-check"></i> Chống DDoS cơ bản</li>
+                                <li><i class="fas fa-check"></i> Hỗ trợ 24/7</li>
                             </ul>
-                            <a href="/order/dong" class="btn btn-order">Đăng Ký Ngay</a>
+                            <a href="/order/dong" class="btn btn-order hover-scale">Đăng Ký Ngay</a>
                         </div>
-                        <div class="plan-card featured">
+                        <div class="plan-card featured hover-scale">
                             <h3>Gói Bạc</h3>
-                            <p class="price">199.000đ/tháng</p>
+                            <p class="price">199.000đ<span>/tháng</span></p>
                             <ul>
-                                <li>4GB RAM</li>
-                                <li>2 CPU Core</li>
-                                <li>40GB SSD</li>
-                                <li>Chống DDoS nâng cao</li>
-                                <li>Hỗ trợ 24/7</li>
+                                <li><i class="fas fa-check"></i> 4GB RAM</li>
+                                <li><i class="fas fa-check"></i> 2 CPU Core</li>
+                                <li><i class="fas fa-check"></i> 40GB SSD NVMe</li>
+                                <li><i class="fas fa-check"></i> Chống DDoS nâng cao</li>
+                                <li><i class="fas fa-check"></i> Hỗ trợ ưu tiên</li>
                             </ul>
-                            <a href="/order/bac" class="btn btn-order">Đăng Ký Ngay</a>
+                            <a href="/order/bac" class="btn btn-order hover-scale">Đăng Ký Ngay</a>
                         </div>
-                        <div class="plan-card">
+                        <div class="plan-card hover-scale">
                             <h3>Gói Vàng</h3>
-                            <p class="price">399.000đ/tháng</p>
+                            <p class="price">399.000đ<span>/tháng</span></p>
                             <ul>
-                                <li>8GB RAM</li>
-                                <li>4 CPU Core</li>
-                                <li>80GB SSD</li>
-                                <li>Chống DDoS chuyên nghiệp</li>
-                                <li>Hỗ trợ ưu tiên</li>
+                                <li><i class="fas fa-check"></i> 8GB RAM</li>
+                                <li><i class="fas fa-check"></i> 4 CPU Core</li>
+                                <li><i class="fas fa-check"></i> 80GB SSD NVMe</li>
+                                <li><i class="fas fa-check"></i> Chống DDoS chuyên nghiệp</li>
+                                <li><i class="fas fa-check"></i> Hỗ trợ VIP</li>
                             </ul>
-                            <a href="/order/vang" class="btn btn-order">Đăng Ký Ngay</a>
+                            <a href="/order/vang" class="btn btn-order hover-scale">Đăng Ký Ngay</a>
                         </div>
                     </div>
                 </div>
                 <div id="vps-pricing" class="pricing-content">
                     <div class="pricing-plans">
-                        <!-- Mẫu gói VPS Game -->
-                        <div class="plan-card">
-                            <h3>VPS Basic</h3>
-                            <p class="price">150.000đ/tháng</p>
+                        <!-- Thêm các gói VPS tương tự như Minecraft -->
+                        <div class="plan-card hover-scale">
+                            <h3>VPS Starter</h3>
+                            <p class="price">150.000đ<span>/tháng</span></p>
                             <ul>
-                                <li>2GB RAM</li>
-                                <li>2 CPU Core</li>
-                                <li>50GB NVMe SSD</li>
-                                <li>Băng thông không giới hạn</li>
+                                <li><i class="fas fa-check"></i> 2GB RAM</li>
+                                <li><i class="fas fa-check"></i> 2 CPU Core</li>
+                                <li><i class="fas fa-check"></i> 50GB NVMe SSD</li>
+                                <li><i class="fas fa-check"></i> Băng thông không giới hạn</li>
                             </ul>
-                            <a href="/order/vps-basic" class="btn btn-order">Đăng Ký Ngay</a>
+                            <a href="/order/vps-starter" class="btn btn-order hover-scale">Đăng Ký Ngay</a>
                         </div>
-                        <!-- Thêm các gói VPS khác -->
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Testimonials/Reviews Section -->
-        <section id="testimonials" class="testimonials-section bg-light">
-            <div class="container">
-                <h2>Khách Hàng Nói Gì Về Chúng Tôi</h2>
-                <div class="testimonial-slider">
-                    <div class="testimonial-item">
-                        <p>"Dịch vụ rất tốt, máy chủ Minecraft chạy mượt mà, không lag. Hỗ trợ nhiệt tình!"</p>
-                        <h4>- Nguyễn Văn A</h4>
-                        <span>Chủ server Minecraft "SkyblockVN"</span>
-                    </div>
-                    <div class="testimonial-item">
-                        <p>"Tôi đã sử dụng VPS của họ cho game và rất hài lòng về hiệu suất cũng như khả năng chống DDoS."</p>
-                        <h4>- Trần Thị B</h4>
-                        <span>Game Developer</span>
+                <div id="dedicated-pricing" class="pricing-content">
+                    <div class="pricing-plans">
+                        <!-- Thêm các gói Dedicated Server -->
+                        <div class="plan-card hover-scale">
+                            <h3>Dedicated Basic</h3>
+                            <p class="price">2.000.000đ<span>/tháng</span></p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Intel Xeon E3</li>
+                                <li><i class="fas fa-check"></i> 16GB ECC RAM</li>
+                                <li><i class="fas fa-check"></i> 1TB NVMe SSD</li>
+                                <li><i class="fas fa-check"></i> Băng thông 1Gbps</li>
+                            </ul>
+                            <a href="/order/dedicated-basic" class="btn btn-order hover-scale">Đăng Ký Ngay</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Call to Action Section -->
-        <section id="cta" class="cta-section">
+        <section id="cta" class="cta-section bg-gradient fade-in">
             <div class="container">
                 <h2>Sẵn Sàng Trải Nghiệm Dịch Vụ Hosting Tốt Nhất?</h2>
                 <p>Bắt đầu ngay hôm nay để đưa máy chủ game của bạn lên một tầm cao mới!</p>
-                <a href="#bang-gia" class="btn btn-primary btn-large">Chọn Gói Dịch Vụ</a>
+                <a href="#pricing" class="btn btn-primary btn-large hover-scale">Chọn Gói Dịch Vụ</a>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col about-us">
@@ -242,8 +234,8 @@ Tuy nhiên, nếu bạn vẫn muốn xóa, đây là phiên bản `index.html` �
                     <ul>
                         <li><a href="/hosting-minecraft">Hosting Minecraft</a></li>
                         <li><a href="/vps-game">VPS Game</a></li>
-                        <li><a href="/physical-server">Máy Chủ Vật Lý</a></li>
-                        <li><a href="/modded-hosting">Modded Hosting</a></li>
+                        <li><a href="/dedicated-server">Máy Chủ Vật Lý</a></li>
+                        <li><a href="/cloud-server">Cloud Server</a></li>
                     </ul>
                 </div>
                 <div class="footer-col useful-links">
@@ -261,9 +253,8 @@ Tuy nhiên, nếu bạn vẫn muốn xóa, đây là phiên bản `index.html` �
                     <p><i class="fas fa-phone"></i> Điện thoại: [Số điện thoại của bạn]</p>
                     <p><i class="fas fa-envelope"></i> Email: [Email của bạn]</p>
                     <div class="social-icons">
-                        <a href="https://facebook.com/yourpage" target="_blank"><img src="images/icon-facebook.png" alt="Facebook"></a>
-                        <a href="https://discord.gg/yourdiscord" target="_blank"><img src="images/icon-discord.png" alt="Discord"></a>
-                        <!-- Thêm các mạng xã hội khác -->
+                        <a href="https://facebook.com/yourpage" target="_blank" class="hover-scale"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://discord.gg/yourdiscord" target="_blank" class="hover-scale"><i class="fab fa-discord"></i></a>
                     </div>
                 </div>
             </div>
@@ -273,10 +264,55 @@ Tuy nhiên, nếu bạn vẫn muốn xóa, đây là phiên bản `index.html` �
         </div>
     </footer>
 
-    <!-- Liên kết với file JavaScript để thêm các chức năng tương tác -->
+    <!-- Modal cho Đăng nhập -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content fade-in-modal">
+            <span class="close-button" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Đăng Nhập</h2>
+            <form>
+                <div class="form-group">
+                    <label for="login-username">Tên đăng nhập / Email</label>
+                    <input type="text" id="login-username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Mật khẩu</label>
+                    <input type="password" id="login-password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary hover-scale">Đăng Nhập</button>
+                <p class="modal-link">Chưa có tài khoản? <a href="#" onclick="openModal('registerModal'); closeModal('loginModal'); return false;">Đăng ký ngay</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal cho Đăng ký -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content fade-in-modal">
+            <span class="close-button" onclick="closeModal('registerModal')">&times;</span>
+            <h2>Đăng Ký</h2>
+            <form>
+                <div class="form-group">
+                    <label for="register-username">Tên đăng nhập</label>
+                    <input type="text" id="register-username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Mật khẩu</label>
+                    <input type="password" id="register-password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-confirm-password">Xác nhận mật khẩu</label>
+                    <input type="password" id="register-confirm-password" name="confirm_password" required>
+                </div>
+                <button type="submit" class="btn btn-primary hover-scale">Đăng Ký</button>
+                <p class="modal-link">Đã có tài khoản? <a href="#" onclick="openModal('loginModal'); closeModal('registerModal'); return false;">Đăng nhập</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Liên kết với file JavaScript để thêm các chức năng tương tác và xử lý hiệu ứng -->
     <script src="script.js"></script>
-    <!-- Thư viện FontAwesome cho icons (nếu dùng) -->
-    <!-- <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script> -->
 </body>
 </html>
-```

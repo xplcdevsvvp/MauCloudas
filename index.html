@@ -7,20 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <nav class="navbar-container fade-in" style="background:linear-gradient(90deg,#004b6b,#006799);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 8px rgba(0,0,0,0.12);border-radius:24px;margin:18px 24px 0 24px;position:sticky;top:0;z-index:999;">
+            <nav class="navbar-container fade-in" style="backdrop-filter: blur(12px);background:linear-gradient(90deg,rgba(0,75,107,0.7),rgba(0,103,153,0.7));padding:16px 32px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 4px 24px rgba(0,0,0,0.18);border-radius:32px;margin:18px 24px 0 24px;position:sticky;top:0;z-index:999;">
             <div class="navbar-logo" style="display:flex;align-items:center;gap:8px;">
-                <img src="xplc-logo.png" alt="Logo" style="height:40px;width:40px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.10);background:#fff;">
-                <span style="font-weight:bold;font-size:1.3rem;color:#fff;">AsakaCloud.vn</span>
+                <img src="xplc-logo.png" alt="Logo" style="height:44px;width:44px;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,0.18);background:rgba(255,255,255,0.7);backdrop-filter:blur(2px);">
+                <span style="font-weight:bold;font-size:1.4rem;color:#fff;text-shadow:0 2px 8px #004b6b80;">AsakaCloud.vn</span>
             </div>
             <ul class="navbar-links" style="list-style:none;display:flex;gap:24px;margin:0;padding:0;">
-                <li><a href="index.html" style="color:#fff;text-decoration:none;font-weight:500;">Trang chủ</a></li>
-                <li><a href="services.html" style="color:#fff;text-decoration:none;font-weight:500;">Dịch vụ Hosting</a></li>
-                <li><a href="#features" style="color:#fff;text-decoration:none;font-weight:500;">Giới thiệu</a></li>
-                <li><a href="#contact" style="color:#fff;text-decoration:none;font-weight:500;">Liên hệ</a></li>
+                <li><a href="index.html" style="color:#fff;text-decoration:none;font-weight:500;padding:8px 18px;border-radius:12px;transition:background 0.2s;">Trang chủ</a></li>
+                <li><a href="services.html" style="color:#fff;text-decoration:none;font-weight:500;padding:8px 18px;border-radius:12px;transition:background 0.2s;">Dịch vụ Hosting</a></li>
+                <li><a href="#features" style="color:#fff;text-decoration:none;font-weight:500;padding:8px 18px;border-radius:12px;transition:background 0.2s;">Giới thiệu</a></li>
+                <li><a href="#contact" style="color:#fff;text-decoration:none;font-weight:500;padding:8px 18px;border-radius:12px;transition:background 0.2s;">Liên hệ</a></li>
             </ul>
             <div class="navbar-actions" style="display:flex;gap:12px;">
-                <button class="cta-btn hover-scale" onclick="openModal('login-modal')">Đăng Nhập</button>
-                <button class="cta-btn hover-scale" onclick="openModal('register-modal')">Đăng Ký</button>
+                <button class="cta-btn main-btn" style="backdrop-filter:blur(2px);background:linear-gradient(90deg,#004b6b,#006799);color:#fff;box-shadow:0 2px 8px #004b6b40;" onclick="openModal('login-modal')">Đăng Nhập</button>
+                <button class="cta-btn alt-btn" style="backdrop-filter:blur(2px);background:linear-gradient(90deg,#7f5af0,#4f8cff);color:#fff;box-shadow:0 2px 8px #7f5af040;" onclick="openModal('register-modal')">Đăng Ký</button>
             </div>
         </nav>
 
@@ -200,32 +200,32 @@
             <div class="footer-bottom">© 2022 - 2025 AsakaCloud.vn. Mọi quyền được bảo lưu.</div>
         </footer>
 
-    <!-- Modal Popup Login -->
-    <div id="login-modal" class="modal">
-        <div class="modal-content fade-in">
-            <span class="close" onclick="closeModal('login-modal')">&times;</span>
-            <h2>Đăng Nhập</h2>
-            <form>
-                <input type="text" placeholder="Tên đăng nhập" required>
-                <input type="password" placeholder="Mật khẩu" required>
-                <button type="submit" class="hover-scale">Đăng Nhập</button>
-            </form>
+        <!-- Modal Popup Login -->
+        <div id="login-modal" class="modal">
+            <div class="modal-content fade-in" style="backdrop-filter:blur(16px);background:linear-gradient(120deg,rgba(0,75,107,0.85),rgba(127,90,240,0.85));box-shadow:0 8px 32px #004b6b60;border-radius:24px;min-width:340px;max-width:95vw;">
+                <span class="close" onclick="closeModal('login-modal')" style="color:#fff;font-size:2.2rem;position:absolute;top:18px;right:28px;cursor:pointer;">&times;</span>
+                <h2 style="text-align:center;font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:18px;">Đăng Nhập</h2>
+                <form style="display:flex;flex-direction:column;gap:14px;">
+                    <input type="text" placeholder="Tên đăng nhập" required style="padding:12px 18px;border-radius:12px;border:none;background:rgba(255,255,255,0.12);color:#fff;font-size:1rem;backdrop-filter:blur(2px);">
+                    <input type="password" placeholder="Mật khẩu" required style="padding:12px 18px;border-radius:12px;border:none;background:rgba(255,255,255,0.12);color:#fff;font-size:1rem;backdrop-filter:blur(2px);">
+                    <button type="submit" class="cta-btn main-btn" style="margin-top:8px;">Đăng Nhập</button>
+                </form>
+            </div>
         </div>
-    </div>
 
-    <!-- Modal Popup Register -->
-    <div id="register-modal" class="modal">
-        <div class="modal-content fade-in">
-            <span class="close" onclick="closeModal('register-modal')">&times;</span>
-            <h2>Đăng Ký</h2>
-            <form>
-                <input type="text" placeholder="Tên đăng nhập" required>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Mật khẩu" required>
-                <button type="submit" class="hover-scale">Đăng Ký</button>
-            </form>
+        <!-- Modal Popup Register -->
+        <div id="register-modal" class="modal">
+            <div class="modal-content fade-in" style="backdrop-filter:blur(16px);background:linear-gradient(120deg,rgba(127,90,240,0.85),rgba(0,75,107,0.85));box-shadow:0 8px 32px #7f5af060;border-radius:24px;min-width:340px;max-width:95vw;">
+                <span class="close" onclick="closeModal('register-modal')" style="color:#fff;font-size:2.2rem;position:absolute;top:18px;right:28px;cursor:pointer;">&times;</span>
+                <h2 style="text-align:center;font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:18px;">Đăng Ký</h2>
+                <form style="display:flex;flex-direction:column;gap:14px;">
+                    <input type="text" placeholder="Tên đăng nhập" required style="padding:12px 18px;border-radius:12px;border:none;background:rgba(255,255,255,0.12);color:#fff;font-size:1rem;backdrop-filter:blur(2px);">
+                    <input type="email" placeholder="Email" required style="padding:12px 18px;border-radius:12px;border:none;background:rgba(255,255,255,0.12);color:#fff;font-size:1rem;backdrop-filter:blur(2px);">
+                    <input type="password" placeholder="Mật khẩu" required style="padding:12px 18px;border-radius:12px;border:none;background:rgba(255,255,255,0.12);color:#fff;font-size:1rem;backdrop-filter:blur(2px);">
+                    <button type="submit" class="cta-btn alt-btn" style="margin-top:8px;">Đăng Ký</button>
+                </form>
+            </div>
         </div>
-    </div>
 
     <!-- Footer -->
     <div id="footer"></div>

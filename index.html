@@ -7,30 +7,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-            <!-- Staff card with hanging effect -->
-            <div id="hanging-staff-card" style="position:fixed;top:80px;left:40px;z-index:9999;width:240px;height:370px;display:flex;flex-direction:column;align-items:center;">
-                <!-- Strap -->
-                <div style="width:32px;height:60px;display:flex;align-items:flex-end;justify-content:center;">
-                    <svg width="32" height="60" style="display:block;" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="13" y="0" width="6" height="48" rx="3" fill="#00334d"/>
-                        <circle cx="16" cy="52" r="8" fill="#222" stroke="#00e6e6" stroke-width="2"/>
-                    </svg>
+                <!-- Co-founder image frame -->
+                <div style="position:fixed;top:80px;left:40px;z-index:9999;width:240px;height:320px;display:flex;flex-direction:column;align-items:center;">
+                    <div style="width:220px;height:220px;background:linear-gradient(120deg,#07111c 0%,#0a2342 60%,#00334d 100%);border-radius:24px;box-shadow:0 8px 32px #00334d80;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+                        <img src="anhnhanvien.jpg" alt="Co-founder" style="width:200px;height:200px;border-radius:18px;object-fit:cover;">
+                    </div>
+                    <div style="margin-top:18px;font-size:1.3rem;font-weight:700;color:#00e6e6;background:#00334d;padding:8px 24px;border-radius:12px;box-shadow:0 2px 8px #00334d80;">Co-founder</div>
                 </div>
-                <!-- Card -->
-                <div id="staff-card-anim" style="width:220px;height:320px;background:linear-gradient(120deg,#07111c 0%,#0a2342 60%,#00334d 100%);border-radius:18px;box-shadow:0 12px 32px #00334d80;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;overflow:hidden;position:relative;animation:hangingSwing 2.2s infinite ease-in-out;">
-                    <div style="width:100%;height:110px;background:linear-gradient(90deg,#00e6e6 0%,#00334d 100%);display:flex;align-items:center;justify-content:center;">
-                          <img src="anhnhanvien.jpg" alt="Staff" style="width:88px;height:88px;border-radius:18px;object-fit:cover;box-shadow:0 2px 12px #00334d80;">
-                    </div>
-                    <div style="position:absolute;top:18px;right:-38px;transform:rotate(90deg);font-size:2.2rem;font-weight:900;color:#eaf6fb;letter-spacing:4px;text-shadow:0 2px 8px #00334d80;">ZAIN</div>
-                    <div style="width:100%;padding:18px 0 0 0;display:flex;flex-direction:column;align-items:center;">
-                        <div style="font-size:1.1rem;font-weight:600;color:#eaf6fb;margin-top:6px;">Zain Ahmad F</div>
-                        <div style="font-size:0.95rem;font-weight:500;color:#00e6e6;margin-top:4px;background:#00334d;padding:4px 12px;border-radius:8px;">FRONT END DEVELOPER</div>
-                    </div>
-                    <div style="position:absolute;bottom:18px;left:0;width:100%;display:flex;justify-content:center;">
-                        <button onclick="alert('Đang chat với Zain Ahmad F!')" style="background:#00e6e6;color:#00334d;font-weight:700;border:none;border-radius:8px;padding:8px 24px;cursor:pointer;box-shadow:0 2px 8px #00334d80;">Chat ngay</button>
-                    </div>
-                </div>
-            </div>
 <nav id="navbar-dynamic" class="navbar-container fade-in" style="backdrop-filter: blur(12px);background:linear-gradient(180deg,#111 0%,#00334d 50%,#07111c 100%);padding:24px 40px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 4px 24px #00334d80;border-radius:32px;margin:18px 24px 0 24px;position:sticky;top:0;z-index:999;transition:all 0.3s cubic-bezier(.4,2,.3,1);">
             <div class="navbar-logo" style="display:flex;align-items:center;gap:8px;">
                 <img id="navbar-logo" src="xplc-logo.png" alt="Logo" style="height:44px;width:44px;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,0.18);background:rgba(255,255,255,0.7);backdrop-filter:blur(2px);transition:all 0.3s cubic-bezier(.4,2,.3,1);">

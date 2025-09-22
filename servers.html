@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách Server - AsakaCloud.vn</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .server-list-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px 16px;
+        }
+        .server-list-title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #4f8cff;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .server-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+        }
+        .server-card {
+            background: linear-gradient(120deg,rgba(0,75,107,0.85),rgba(127,90,240,0.85));
+            border-radius: 18px;
+            box-shadow: 0 4px 24px #4f8cff40;
+            padding: 24px 18px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .server-card:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 8px 32px #4f8cff80;
+        }
+        .server-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .server-desc {
+            font-size: 1rem;
+            margin-bottom: 12px;
+            opacity: 0.85;
+        }
+        .server-price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ffe066;
+            margin-bottom: 8px;
+        }
+        .server-btn {
+            background: linear-gradient(90deg,#4f8cff,#7f5af0);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 18px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: auto;
+            transition: background 0.2s;
+        }
+        .server-btn:hover {
+            background: linear-gradient(90deg,#7f5af0,#4f8cff);
+        }
+    </style>
+</head>
+<body>
+    <div class="server-list-container">
+        <div class="server-list-title">Danh sách 45 Server Game/VPS/Dedicated</div>
+        <div class="server-grid">
+            <!-- 45 server cards -->
+            <!-- Bạn có thể thêm/bớt server tuỳ ý -->
+            <!-- Demo 45 server -->
+            
+            <!-- Server cards auto generated -->
+            <script>
+                const servers = [];
+                for(let i=1;i<=45;i++){
+                    servers.push({
+                        name: `Server #${i}`,
+                        desc: `Máy chủ hiệu năng cao, cấu hình tuỳ chọn, bảo vệ AntiDDoS, hỗ trợ 24/7.`,
+                        price: `${25000 + i*1000} VND/tháng`
+                    });
+                }
+                document.write(servers.map(s => `
+                <div class='server-card'>
+                    <div class='server-name'>${s.name}</div>
+                    <div class='server-desc'>${s.desc}</div>
+                    <div class='server-price'>${s.price}</div>
+                    <button class='server-btn'>Thuê ngay</button>
+                </div>
+                `).join(''));
+            </script>
+        </div>
+    </div>
+</body>
+</html>

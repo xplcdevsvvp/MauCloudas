@@ -199,6 +199,7 @@
                 </div>
             </div>
             <div class="footer-bottom">© 2022 - 2025 AsakaCloud.vn. Mọi quyền được bảo lưu.</div>
+
         </footer>
 
         <!-- Modal Popup Login -->
@@ -228,8 +229,15 @@
             </div>
         </div>
 
-    <!-- Footer -->
-    <div id="footer"></div>
+    <!-- Toast thông báo thành công -->
+    <div id="toast-success" style="display:none;position:fixed;top:32px;right:32px;z-index:99999;background:linear-gradient(90deg,#4f8cff,#7f5af0);color:#fff;padding:18px 32px;border-radius:16px;box-shadow:0 4px 16px #4f8cff60;font-size:1.1rem;font-weight:600;animation:fadeInToast 0.5s;"></div>
+
+    <style>
+    @keyframes fadeInToast {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    </style>
 
             <script src="Navbar.js"></script>
             <script src="Footer.js"></script>
@@ -263,7 +271,7 @@
                             e.preventDefault();
                             var user = document.getElementById('loginUser').value;
                             var pass = document.getElementById('loginPass').value;
-                            alert('Đăng nhập thành công!\nTài khoản: ' + user);
+                            showToast('Đăng nhập thành công!');
                             closeModal('login-modal');
                         });
                     }
@@ -273,9 +281,22 @@
                             e.preventDefault();
                             var user = document.getElementById('regUser').value;
                             var email = document.getElementById('regEmail').value;
-                            alert('Đăng ký thành công!\nTài khoản: ' + user + '\nEmail: ' + email);
+                            showToast('Đăng ký thành công!');
                             closeModal('register-modal');
                         });
+                // Toast hiệu ứng thành công
+                function showToast(msg) {
+                    var toast = document.getElementById('toast-success');
+                    toast.innerText = msg;
+                    toast.style.display = 'block';
+                    toast.style.opacity = '1';
+                    setTimeout(function() {
+                        toast.style.opacity = '0';
+                        setTimeout(function() {
+                            toast.style.display = 'none';
+                        }, 400);
+                    }, 1800);
+                }
                     }
                 });
             </script>

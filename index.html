@@ -7,57 +7,156 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Animated squares background -->
-    <div id="squares-bg-root"></div>
-        <!-- Fixed rectangular staff card -->
-        <div style="position:fixed;top:24px;left:24px;z-index:9999;width:180px;height:72px;background:#00334d;border-radius:12px;box-shadow:0 2px 8px #001a2c80;display:flex;align-items:center;justify-content:flex-start;overflow:hidden;">
-            <img src="anhnhanvien.jpg" alt="Staff" style="width:56px;height:64px;border-radius:8px;object-fit:cover;margin-left:8px;">
-            <div style="margin-left:12px;display:flex;flex-direction:column;">
-                <span style="font-size:1.08rem;font-weight:700;color:#eaf6fb;">#XPLC STUDIOS</span>
-                <span style="font-size:0.98rem;font-weight:500;color:#00e6e6;">Co-founder</span>
+    <nav class="navbar glass-nav">
+        <div class="logo"><img src="xplc-logo.png" alt="Logo"/></div>
+        <ul>
+            <li><a href="#hero">Trang chủ</a></li>
+            <li><a href="#services">Dịch vụ Hosting</a></li>
+            <li><a href="#features">Giới thiệu</a></li>
+            <li><a href="#pricing">Bảng giá</a></li>
+            <li><a href="#hardware">Phần cứng</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Liên hệ</a></li>
+        </ul>
+    </nav>
+
+    <section id="hero" class="hero fade-in">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="big-title gradient-text">AsakaCloud.vn</h1>
+            <p>Dịch vụ cloud hosting cho game server hiện đại, ổn định và mạnh mẽ</p>
+            <div class="hero-actions">
+                <button class="cta-btn main-btn">Khám phá ngay</button>
+                <button class="cta-btn alt-btn">Tư vấn miễn phí</button>
             </div>
         </div>
-<nav id="navbar-dynamic" class="navbar-container fade-in" style="backdrop-filter: blur(12px);background:linear-gradient(180deg,#111 0%,#00334d 50%,#07111c 100%);padding:24px 40px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 4px 24px #00334d80;border-radius:32px;margin:18px 24px 0 24px;position:sticky;top:0;z-index:999;transition:all 0.3s cubic-bezier(.4,2,.3,1);">
-            <div class="navbar-logo" style="display:flex;align-items:center;gap:8px;">
-                <img id="navbar-logo" src="xplc-logo.png" alt="Logo" style="height:44px;width:44px;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,0.18);background:rgba(255,255,255,0.7);backdrop-filter:blur(2px);transition:all 0.3s cubic-bezier(.4,2,.3,1);">
-                <span id="navbar-title" style="font-weight:bold;font-size:1.4rem;color:#eaf6fb;text-shadow:none;transition:all 0.3s cubic-bezier(.4,2,.3,1);">#XPLC STUDIOS</span>
-            </div>
-            <ul class="navbar-links" style="list-style:none;display:flex;gap:24px;margin:0;padding:0;">
-                <li><a href="index.html" style="color:#fff;text-decoration:none;font-weight:500;padding:8px 18px;border-radius:12px;transition:background 0.2s;">Trang chủ</a></li>
-                <li><a href="services.html" style="color:#fff;text-decoration:none;font-weight:500;padding:8px 18px;border-radius:12px;transition:background 0.2s;">Dịch vụ Hosting</a></li>
-                <li><a href="#features" style="color:#fff;text-decoration:none;font-weight:500;padding:8px 18px;border-radius:12px;transition:background 0.2s;">Giới thiệu</a></li>
-                <li><a href="#contact" style="color:#fff;text-decoration:none;font-weight:500;padding:8px 18px;border-radius:12px;transition:background 0.2s;">Liên hệ</a></li>
-                    <li><a href="#gallery" style="color:#fff;text-decoration:none;font-weight:500;padding:8px 18px;border-radius:12px;transition:background 0.2s;">Thư Viện Ảnh</a></li>
-                    <li><a href="#team" style="color:#fff;text-decoration:none;font-weight:500;padding:8px 18px;border-radius:12px;transition:background 0.2s;">Đội Ngũ</a></li>
-            </ul>
-        <!-- Section: Thư Viện Ảnh -->
-        <section id="gallery" class="gallery-section fade-in glass">
-            <h2 style="font-weight:800;color:#eaf6fb;text-shadow:none;">Thư Viện Ảnh</h2>
-            <div class="gallery-list" style="display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;margin-top:2rem;">
-                <img src="epyccpu-n31.png" alt="Server Demo" class="gallery-img" style="width:180px;height:120px;border-radius:1rem;object-fit:cover;box-shadow:0 2px 12px #00334d80;"/>
-                <img src="anhnhanvien.jpg" alt="Nhân viên" class="gallery-img" style="width:120px;height:120px;border-radius:1rem;object-fit:cover;box-shadow:0 2px 12px #00334d80;"/>
-                <img src="xplc-logo.png" alt="Logo" class="gallery-img" style="width:120px;height:120px;border-radius:1rem;object-fit:cover;box-shadow:0 2px 12px #00334d80;"/>
-                <img src="https://img.zyndata.vn/landingpage/datacenter/vnpt-dc-3.png" alt="Datacenter" class="gallery-img" style="width:180px;height:120px;border-radius:1rem;object-fit:cover;box-shadow:0 2px 12px #00334d80;"/>
-                <img src="https://img.zyndata.vn/bg-cloudhosting-transparent.png" alt="Cloud Hosting" class="gallery-img" style="width:180px;height:120px;border-radius:1rem;object-fit:cover;box-shadow:0 2px 12px #00334d80;"/>
-            </div>
-        </section>
+    </section>
 
-        <!-- Section: Đội Ngũ -->
-        <section id="team" class="team-section fade-in">
-            <h2 style="font-weight:800;color:#eaf6fb;text-shadow:none;">Đội Ngũ</h2>
-            <div class="team-list" style="display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;margin-top:2rem;">
-                <div class="team-card" style="background:rgba(20,30,60,0.5);border-radius:1rem;padding:1.5rem 1rem;box-shadow:0 2px 12px #00334d80;text-align:center;width:220px;">
-                    <img src="anhnhanvien.jpg" alt="Phạm Trần Công Danh" style="width:80px;height:80px;border-radius:1rem;object-fit:cover;margin-bottom:1rem;box-shadow:0 2px 8px #00334d80;"/>
-                    <h3 style="color:#00e6e6;font-size:1.1rem;">Phạm Trần Công Danh</h3>
-                    <p style="color:#eaf6fb;">Quản lý kỹ thuật</p>
-                </div>
-                <div class="team-card" style="background:rgba(20,30,60,0.5);border-radius:1rem;padding:1.5rem 1rem;box-shadow:0 2px 12px #00334d80;text-align:center;width:220px;">
-                    <img src="xplc-logo.png" alt="Nguyễn Điền Thiên" style="width:80px;height:80px;border-radius:1rem;object-fit:cover;margin-bottom:1rem;box-shadow:0 2px 8px #00334d80;"/>
-                    <h3 style="color:#00e6e6;font-size:1.1rem;">Nguyễn Điền Thiên</h3>
-                    <p style="color:#eaf6fb;">Đại diện pháp luật</p>
-                </div>
-                <div class="team-card" style="background:rgba(20,30,60,0.5);border-radius:1rem;padding:1.5rem 1rem;box-shadow:0 2px 12px #00334d80;text-align:center;width:220px;">
-                    <img src="epyccpu-n31.png" alt="Support Team" style="width:80px;height:80px;border-radius:1rem;object-fit:cover;margin-bottom:1rem;box-shadow:0 2px 8px #00334d80;"/>
+    <section id="services" class="features fade-in">
+        <h2>Dịch vụ Hosting</h2>
+        <div class="features-list">
+            <div class="feature-card">
+                <div class="feature-icon">🖥️</div>
+                <h3>VPS Game</h3>
+                <p>Máy chủ ảo cho các game như Minecraft, Rust, ARK, v.v.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">☁️</div>
+                <h3>Cloud Server</h3>
+                <p>Dịch vụ máy chủ đám mây cho các ứng dụng và game trực tuyến</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌐</div>
+                <h3>Web Hosting</h3>
+                <p>Dịch vụ lưu trữ website ổn định và an toàn</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing fade-in">
+        <h2>Bảng giá dịch vụ</h2>
+        <div class="pricing-list">
+            <div class="pricing-card">
+                <div class="badge badge-orange">VPS Game</div>
+                <h3>Gói Cơ Bản</h3>
+                <ul>
+                    <li>CPU Intel Xeon</li>
+                    <li>RAM 4GB</li>
+                    <li>SSD NVMe</li>
+                    <li>AntiDDoS Pro</li>
+                </ul>
+                <div class="price">Chỉ từ <span>25,000 VND</span></div>
+            </div>
+            <div class="pricing-card">
+                <div class="badge badge-green">Cloud Server</div>
+                <h3>Gói Nâng Cao</h3>
+                <ul>
+                    <li>CPU AMD EPYC</li>
+                    <li>RAM 8GB</li>
+                    <li>SSD NVMe</li>
+                    <li>AntiDDoS Pro</li>
+                </ul>
+                <div class="price">Chỉ từ <span>60,000 VND</span></div>
+            </div>
+            <div class="pricing-card">
+                <div class="badge badge-blue">Web Hosting</div>
+                <h3>Gói Website</h3>
+                <ul>
+                    <li>SSD NVMe</li>
+                    <li>Băng thông không giới hạn</li>
+                    <li>SSL miễn phí</li>
+                </ul>
+                <div class="price">Chỉ từ <span>15,000 VND</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="hardware" class="hardware fade-in">
+        <h2>Phần cứng hiện đại</h2>
+        <div class="hardware-list">
+            <div class="hardware-card">
+                <img src="epyccpu-n31.png" alt="AMD EPYC" class="hardware-img">
+                <div class="badge badge-blue">Hiệu năng cao</div>
+            </div>
+            <div class="hardware-card">
+                <img src="epyccpu-n31.png" alt="Chất lượng cao" class="hardware-img">
+                <div class="badge badge-purple">Chất lượng quốc tế</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section fade-in">
+        <h2>FAQ - Câu hỏi thường gặp</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <h3>Máy chủ có bảo vệ DDoS không?</h3>
+                <p>Có, tất cả dịch vụ đều tích hợp AntiDDoS Pro.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Hỗ trợ kỹ thuật như thế nào?</h3>
+                <p>Đội ngũ kỹ thuật hỗ trợ 24/7 qua Discord, ticket, email.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Có thể nâng cấp tài nguyên không?</h3>
+                <p>Có, bạn có thể nâng cấp CPU, RAM, SSD bất cứ lúc nào.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Thanh toán và hoàn tiền ra sao?</h3>
+                <p>Thanh toán qua nhiều hình thức, hoàn tiền trong 7 ngày nếu không hài lòng.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Website có chạy tốt trên mobile không?</h3>
+                <p>Có, giao diện responsive tối ưu cho mọi thiết bị.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="cta-section fade-in">
+        <div class="cta-box">
+            <h2>Liên hệ tư vấn</h2>
+            <p>Đội ngũ hỗ trợ 24/7 qua Discord, email, ticket.</p>
+            <div class="cta-actions">
+                <button class="cta-btn main-btn">Gửi yêu cầu</button>
+                <button class="cta-btn alt-btn">Tham gia Discord</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer glass">
+        <div class="footer-content">
+            <img src="xplc-logo.png" alt="XPLC Cloud"/>
+            <p>© 2022 - 2025 AsakaCloud.vn. Mọi quyền được bảo lưu.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Discord</a>
+                <a href="#">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
                     <h3 style="color:#00e6e6;font-size:1.1rem;">Đội Hỗ Trợ</h3>
                     <p style="color:#eaf6fb;">Hỗ trợ 24/7</p>
                 </div>

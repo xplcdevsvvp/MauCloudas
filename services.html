@@ -1,105 +1,89 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Dịch vụ - Asaka Cloud</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body { font-family: system-ui, sans-serif; background: #0b0f19; }
-    .glow-box {
-      border: 1px solid transparent;
-      background-clip: padding-box;
-      position: relative;
-      border-radius: 12px;
-    }
-    .glow-box::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      padding: 1px;
-      background: linear-gradient(90deg,#9333ea,#3b82f6);
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-              mask-composite: exclude;
-      opacity: 0.4;
-      transition: opacity 0.3s;
-    }
-    .glow-box:hover::before { opacity: 1; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AsakaCloud.vn - Dịch vụ Hosting Game</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="text-slate-100">
 
-  <!-- NAV -->
-  <header class="bg-slate-950/70 backdrop-blur sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <div class="text-xl font-bold bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-        <a href="index.html">Asaka Cloud</a>
-      </div>
-      <nav class="hidden md:flex gap-8 text-sm text-slate-300 items-center">
-        <a href="index.html" class="hover:text-white">Trang chủ</a>
-        <a href="services.html" class="text-white font-semibold">Dịch vụ</a>
-        <a href="#support" class="hover:text-white">Hỗ trợ</a>
-      </nav>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">AsakaCloud</div>
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Dịch vụ Hosting</a></li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Liên hệ</a></li>
+            <li><a href="#" onclick="openModal('loginModal')">Đăng nhập</a></li>
+            <li><a href="#" onclick="openModal('signupModal')">Đăng ký</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Chào mừng đến với AsakaCloud.vn</h1>
+        <p>Dịch vụ cloud hosting cho game server hiện đại, ổn định và mạnh mẽ</p>
+        <button class="cta-btn">Khám phá ngay</button>
+    </section>
+
+    <!-- Dịch vụ Hosting -->
+    <section class="services">
+        <div class="service-card">
+            <h3>VPS Game</h3>
+            <p>Máy chủ ảo cho các game như Minecraft, Rust, ARK, v.v.</p>
+        </div>
+        <div class="service-card">
+            <h3>Cloud Server</h3>
+            <p>Dịch vụ máy chủ đám mây cho các ứng dụng và game trực tuyến</p>
+        </div>
+        <div class="service-card">
+            <h3>Web Hosting</h3>
+            <p>Dịch vụ lưu trữ website ổn định và an toàn</p>
+        </div>
+    </section>
+
+    <!-- Modal Đăng Nhập -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Đăng nhập</h2>
+            <form>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Mật khẩu" required>
+                <button type="submit">Đăng nhập</button>
+            </form>
+        </div>
     </div>
-  </header>
 
-  <!-- SERVICES -->
-  <section class="py-16">
-    <div class="max-w-6xl mx-auto px-4">
-      <h1 class="text-3xl font-bold text-center">Gói Dịch Vụ Máy Chủ</h1>
-      <p class="text-center text-slate-400 mt-2">Chọn gói phù hợp cho nhu cầu của bạn</p>
-
-      <div class="grid md:grid-cols-3 gap-6 mt-10">
-        
-        <div class="glow-box p-6 bg-slate-900 text-center">
-          <h3 class="font-semibold text-lg">Starter</h3>
-          <p class="text-3xl font-bold mt-3">100K <span class="text-base">/tháng</span></p>
-          <ul class="mt-4 text-slate-300 text-sm space-y-2">
-            <li>1 vCPU</li>
-            <li>2GB RAM</li>
-            <li>20GB SSD</li>
-            <li>Anti-DDoS</li>
-          </ul>
-          <a href="#order" class="mt-6 block py-2 rounded-md bg-indigo-600 font-semibold">Đặt ngay</a>
+    <!-- Modal Đăng Ký -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('signupModal')">&times;</span>
+            <h2>Đăng ký</h2>
+            <form>
+                <input type="text" placeholder="Họ và tên" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Mật khẩu" required>
+                <button type="submit">Đăng ký</button>
+            </form>
         </div>
-
-        <div class="glow-box p-6 bg-slate-900 text-center">
-          <h3 class="font-semibold text-lg">Gamer</h3>
-          <p class="text-3xl font-bold mt-3">250K <span class="text-base">/tháng</span></p>
-          <ul class="mt-4 text-slate-300 text-sm space-y-2">
-            <li>2 vCPU</li>
-            <li>6GB RAM</li>
-            <li>60GB SSD NVMe</li>
-            <li>Hỗ trợ 24/7</li>
-          </ul>
-          <a href="#order" class="mt-6 block py-2 rounded-md bg-indigo-600 font-semibold">Đặt ngay</a>
-        </div>
-
-        <div class="glow-box p-6 bg-slate-900 text-center">
-          <h3 class="font-semibold text-lg">Pro</h3>
-          <p class="text-3xl font-bold mt-3">500K <span class="text-base">/tháng</span></p>
-          <ul class="mt-4 text-slate-300 text-sm space-y-2">
-            <li>4 vCPU</li>
-            <li>12GB RAM</li>
-            <li>120GB SSD NVMe</li>
-            <li>Backup + SLA</li>
-          </ul>
-          <a href="#order" class="mt-6 block py-2 rounded-md bg-indigo-600 font-semibold">Đặt ngay</a>
-        </div>
-
-      </div>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer class="py-8 border-t border-white/10 text-center text-slate-400 text-sm">
-    © <span id="year"></span> Asaka Cloud Hosting. All rights reserved.
-  </footer>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 AsakaCloud.vn. Tất cả các quyền được bảo vệ.</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+        </div>
+    </footer>
 
-  <script>
-    document.getElementById("year").innerText = new Date().getFullYear();
-  </script>
+    <script src="scripts.js"></script>
 </body>
+
 </html>

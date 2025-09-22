@@ -1,71 +1,182 @@
-/* General styles for the dark mode and light mode */
+/* Cấu trúc cơ bản của website */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  transition: background-color 0.5s, color 0.5s;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-/* Light mode and dark mode background */
-:root {
-  --background-color: #f3f4f6; /* Light background */
-  --text-color: #1f2937; /* Light text */
+/* Navbar */
+.navbar {
+    background-color: #004b6b;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
 }
 
-[data-theme="dark"] {
-  --background-color: #121212; /* Dark background */
-  --text-color: #e5e7eb; /* Light text */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
 }
 
-/* Utility classes for glow effect and transitions */
-.glow-effect {
-  transition: all 0.3s ease;
-  border-radius: 10px;
+.navbar ul li {
+    margin: 0 15px;
 }
 
-.glow-effect:hover {
-  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.7);
-  transform: scale(1.05);
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
 }
 
-/* Button styling */
-.btn-primary {
-  background-color: #4f46e5;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-align: center;
-  transition: 0.3s;
+.navbar ul li a:hover {
+    color: #00c0ff;
 }
 
-.btn-primary:hover {
-  background-color: #6366f1;
+.logo {
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-/* Form input styling */
-.input-field {
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-  width: 100%;
-  transition: 0.3s;
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #004b6b, #006799);
+    color: white;
+    text-align: center;
+    padding: 50px 0;
 }
 
-.input-field:focus {
-  border-color: #4f46e5;
-  outline: none;
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
 }
 
-/* Card Layout */
-.card {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  transition: 0.3s ease;
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
-.card:hover {
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+.cta-btn {
+    background-color: #00c0ff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #008cb0;
+}
+
+/* Dịch vụ Hosting */
+.services {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+}
+
+.service-card {
+    background-color: white;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+}
+
+.service-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+}
+
+.modal input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.modal button {
+    padding: 10px;
+    width: 100%;
+    background-color: #004b6b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.modal button:hover {
+    background-color: #006799;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.social-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #00c0ff;
 }

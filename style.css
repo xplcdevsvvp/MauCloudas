@@ -1,0 +1,71 @@
+/* General styles for the dark mode and light mode */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.5s, color 0.5s;
+}
+
+/* Light mode and dark mode background */
+:root {
+  --background-color: #f3f4f6; /* Light background */
+  --text-color: #1f2937; /* Light text */
+}
+
+[data-theme="dark"] {
+  --background-color: #121212; /* Dark background */
+  --text-color: #e5e7eb; /* Light text */
+}
+
+/* Utility classes for glow effect and transitions */
+.glow-effect {
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+
+.glow-effect:hover {
+  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.7);
+  transform: scale(1.05);
+}
+
+/* Button styling */
+.btn-primary {
+  background-color: #4f46e5;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #6366f1;
+}
+
+/* Form input styling */
+.input-field {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.input-field:focus {
+  border-color: #4f46e5;
+  outline: none;
+}
+
+/* Card Layout */
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}

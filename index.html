@@ -7,34 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Model card nhân viên ngoài màn hình -->
-    <div id="floating-staff" style="position:fixed;bottom:120px;right:32px;z-index:9999;">
-        <div style="display:flex;flex-direction:column;align-items:center;">
-            <div id="staff-card" style="background:linear-gradient(120deg,#4f8cff,#7f5af0);box-shadow:0 4px 16px #4f8cff60;border-radius:18px;padding:16px 20px;min-width:180px;max-width:220px;display:none;flex-direction:column;align-items:center;">
-                <img src="anhnhanvien.png" alt="Phạm Thành Công" style="width:54px;height:54px;border-radius:50%;box-shadow:0 2px 8px #7f5af080;margin-bottom:8px;">
-                <div style="font-weight:700;font-size:1.1rem;color:#fff;margin-bottom:4px;">Phạm Thành Công</div>
-                <div style="font-size:0.95rem;color:#e0e0e0;margin-bottom:8px;">Model: card.gbl</div>
-                <button onclick="alert('Đang chat với Phạm Thành Công!')" style="background:#fff;color:#4f8cff;font-weight:600;border:none;border-radius:8px;padding:6px 18px;cursor:pointer;">Chat ngay</button>
+        <!-- Staff card draggable -->
+        <div id="draggable-staff-card" style="position:fixed;bottom:120px;right:32px;z-index:9999;cursor:grab;">
+            <div style="width:220px;height:340px;background:linear-gradient(120deg,#07111c 0%,#0a2342 60%,#00334d 100%);border-radius:18px;box-shadow:0 8px 32px #00334d80;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;overflow:hidden;position:relative;">
+                <div style="width:100%;height:120px;background:linear-gradient(90deg,#00e6e6 0%,#00334d 100%);display:flex;align-items:center;justify-content:center;">
+                    <img src="anhnhanvien.jpg" alt="Staff" style="width:80px;height:80px;border-radius:50%;object-fit:cover;box-shadow:0 2px 12px #00334d80;">
+                </div>
+                <div style="width:100%;padding:18px 0 0 0;display:flex;flex-direction:column;align-items:center;">
+                    <div style="font-size:1.5rem;font-weight:800;color:#eaf6fb;letter-spacing:2px;">ZAIN</div>
+                    <div style="font-size:1.1rem;font-weight:600;color:#eaf6fb;margin-top:6px;">Zain Ahmad F</div>
+                    <div style="font-size:0.95rem;font-weight:500;color:#00e6e6;margin-top:4px;background:#00334d;padding:4px 12px;border-radius:8px;">FRONT END DEVELOPER</div>
+                </div>
+                <div style="position:absolute;bottom:18px;left:0;width:100%;display:flex;justify-content:center;">
+                    <button onclick="alert('Đang chat với Zain Ahmad F!')" style="background:#00e6e6;color:#00334d;font-weight:700;border:none;border-radius:8px;padding:8px 24px;cursor:pointer;box-shadow:0 2px 8px #00334d80;">Chat ngay</button>
+                </div>
             </div>
-            <button id="staff-toggle" style="background:linear-gradient(120deg,#7f5af0,#4f8cff);border:none;border-radius:50%;width:56px;height:56px;box-shadow:0 4px 16px #7f5af060;display:flex;align-items:center;justify-content:center;cursor:pointer;">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#fff"/><text x="12" y="16" text-anchor="middle" font-size="12" fill="#4f8cff" font-family="Arial">NV</text></svg>
-            </button>
         </div>
-    </div>
-    <!-- Nhân viên treo lơ lửng -->
-    <div id="floating-staff" style="position:fixed;bottom:120px;right:32px;z-index:9999;">
-        <div style="display:flex;flex-direction:column;align-items:center;">
-            <div id="staff-card" style="background:linear-gradient(120deg,#4f8cff,#7f5af0);box-shadow:0 4px 16px #4f8cff60;border-radius:18px;padding:16px 20px;min-width:180px;max-width:220px;display:none;flex-direction:column;align-items:center;">
-                <img src="anhnhanvien.png" alt="Phạm Thành Công" style="width:54px;height:54px;border-radius:50%;box-shadow:0 2px 8px #7f5af080;margin-bottom:8px;">
-                <div style="font-weight:700;font-size:1.1rem;color:#fff;margin-bottom:4px;">Phạm Thành Công</div>
-                <div style="font-size:0.95rem;color:#e0e0e0;margin-bottom:8px;">Model: card.gbl</div>
-                <button onclick="alert('Đang chat với Phạm Thành Công!')" style="background:#fff;color:#4f8cff;font-weight:600;border:none;border-radius:8px;padding:6px 18px;cursor:pointer;">Chat ngay</button>
-            </div>
-            <button id="staff-toggle" style="background:linear-gradient(120deg,#7f5af0,#4f8cff);border:none;border-radius:50%;width:56px;height:56px;box-shadow:0 4px 16px #7f5af060;display:flex;align-items:center;justify-content:center;cursor:pointer;">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#fff"/><text x="12" y="16" text-anchor="middle" font-size="12" fill="#4f8cff" font-family="Arial">NV</text></svg>
-            </button>
-        </div>
-    </div>
 <nav id="navbar-dynamic" class="navbar-container fade-in" style="backdrop-filter: blur(12px);background:linear-gradient(90deg,rgba(0,75,107,0.7),rgba(0,103,153,0.7));padding:24px 40px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 4px 24px rgba(0,0,0,0.18);border-radius:32px;margin:18px 24px 0 24px;position:sticky;top:0;z-index:999;transition:all 0.3s cubic-bezier(.4,2,.3,1);">
             <div class="navbar-logo" style="display:flex;align-items:center;gap:8px;">
                 <img id="navbar-logo" src="xplc-logo.png" alt="Logo" style="height:44px;width:44px;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,0.18);background:rgba(255,255,255,0.7);backdrop-filter:blur(2px);transition:all 0.3s cubic-bezier(.4,2,.3,1);">
@@ -52,8 +40,8 @@
         <!-- Hero Section -->
             <section class="hero fade-in">
     <div class="rotating-square" style="top:40px;left:40px;"></div>
-                <div class="hero-bg" style="background:url('epyccpu-n31.png') center/cover no-repeat;position:absolute;top:0;left:0;width:100%;height:100%;filter:brightness(0.45) blur(1.5px);z-index:1;"></div>
-                <div class="hero-overlay" style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(120deg,rgba(0,75,107,0.7),rgba(127,90,240,0.6));z-index:2;"></div>
+                <div class="hero-bg" style="background:linear-gradient(120deg,#07111c 0%,#0a2342 60%,#00334d 100%);position:absolute;top:0;left:0;width:100%;height:100%;filter:blur(8px);z-index:1;"></div>
+                <div class="hero-overlay" style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(120deg,rgba(7,17,28,0.92),rgba(10,35,66,0.85));z-index:2;"></div>
                 <div class="hero-content" style="position:relative;z-index:3;">
                 <h1 class="big-title"><span>Dịch vụ cho thuê máy chủ <span class="gradient-text">Game Việt Nam</span></span></h1>
                 <p>Asaka Cloud tự hào là một trong những dịch vụ cho thuê máy chủ trò chơi trực tuyến tốt nhất tại Việt Nam, cung cấp giải pháp lưu trữ máy chủ trò chơi trực tuyến chất lượng cao với giá cả phải chăng.</p>
@@ -238,6 +226,41 @@
 
             <script src="Navbar.js"></script>
             <script src="Footer.js"></script>
+        <script>
+        // Draggable staff card
+        const staffCard = document.getElementById('draggable-staff-card');
+        let isDragging = false, offsetX = 0, offsetY = 0;
+        staffCard.addEventListener('mousedown', function(e) {
+            isDragging = true;
+            offsetX = e.clientX - staffCard.getBoundingClientRect().left;
+            offsetY = e.clientY - staffCard.getBoundingClientRect().top;
+            staffCard.style.transition = 'none';
+            staffCard.style.cursor = 'grabbing';
+        });
+        document.addEventListener('mousemove', function(e) {
+            if(isDragging) {
+                staffCard.style.left = (e.clientX - offsetX) + 'px';
+                staffCard.style.top = (e.clientY - offsetY) + 'px';
+                staffCard.style.right = '';
+                staffCard.style.bottom = '';
+                staffCard.style.position = 'fixed';
+            }
+        });
+        document.addEventListener('mouseup', function() {
+            isDragging = false;
+            staffCard.style.cursor = 'grab';
+            staffCard.style.transition = 'box-shadow 0.2s';
+        });
+        // Animate left-right floating
+        let direction = 1, pos = 32;
+        setInterval(() => {
+            if(!isDragging) {
+                pos += direction * 1.2;
+                if(pos > 80 || pos < 10) direction *= -1;
+                staffCard.style.right = pos + 'px';
+            }
+        }, 30);
+        </script>
             <script>
         // Nhân viên treo lơ lửng toggle
         document.getElementById('staff-toggle').onclick = function() {
@@ -281,7 +304,7 @@
     </button>
 
     <!-- Popup chat AI -->
-    <div id="ai-chat-popup" style="display:none;position:fixed;bottom:110px;left:32px;z-index:9999;background:rgba(16,19,26,0.98);backdrop-filter:blur(8px);box-shadow:0 8px 32px #4f8cff60;border-radius:18px;width:340px;max-width:95vw;padding:24px 18px;">
+    <div id="ai-chat-popup" style="display:none;position:fixed;bottom:110px;left:32px;z-index:9999;background:linear-gradient(120deg,#07111c 0%, #0a2342 60%, #00334d 100%);backdrop-filter:blur(12px);box-shadow:0 8px 32px #00334d80;border-radius:18px;width:340px;max-width:95vw;padding:24px 18px;">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M6 19c-2.5 0-4-2-4-4.5C2 11 4.5 9 7.5 9c.5-3 3-5 6-5 3.5 0 6.5 2.5 6.5 6 2 0 3 1.5 3 3.5S21.5 19 19 19H6z" fill="#4f8cff"/></svg>
             <span style="font-weight:700;font-size:1.1rem;color:#fff;">AI Tư Vấn</span>
@@ -311,12 +334,28 @@
                 userMsg.style.marginBottom = '6px';
                 userMsg.innerHTML = '<b>Bạn:</b> ' + msg;
                 messages.appendChild(userMsg);
-                var aiMsg = document.createElement('div');
-                aiMsg.style.marginBottom = '10px';
-                aiMsg.innerHTML = '<b>AI:</b> ' + 'Cảm ơn bạn đã hỏi! Đây là demo trả lời. (Tích hợp API thật sau)';
-                messages.appendChild(aiMsg);
+                // Tích hợp API thật tại đây
+                fetch('https://api.chp.ai/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: msg })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    var aiMsg = document.createElement('div');
+                    aiMsg.style.marginBottom = '10px';
+                    aiMsg.innerHTML = '<b>AI:</b> ' + (data.reply || 'Không có phản hồi từ AI.');
+                    messages.appendChild(aiMsg);
+                    messages.scrollTop = messages.scrollHeight;
+                })
+                .catch(() => {
+                    var aiMsg = document.createElement('div');
+                    aiMsg.style.marginBottom = '10px';
+                    aiMsg.innerHTML = '<b>AI:</b> Không thể kết nối API.';
+                    messages.appendChild(aiMsg);
+                    messages.scrollTop = messages.scrollHeight;
+                });
                 input.value = '';
-                messages.scrollTop = messages.scrollHeight;
             }
         };
     </script>

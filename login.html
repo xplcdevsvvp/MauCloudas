@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Đăng Nhập - #Xplc Cloud</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Đăng Nhập - AsakaCloud.vn</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body data-theme="light">
 
@@ -18,22 +19,12 @@
   </header>
 
   <!-- Main Section -->
-  <section class="max-w-lg mx-auto py-16 glow-effect">
-    <h2 class="text-3xl text-center text-light-heading dark:text-dark-heading mb-6">Đăng Nhập</h2>
-    <form action="#" method="post" class="space-y-4">
-      <div>
-        <label for="email" class="block text-sm text-light-text dark:text-dark-text">Email</label>
-        <input type="email" id="email" name="email" class="input-field" required>
-      </div>
-      <div>
-        <label for="password" class="block text-sm text-light-text dark:text-dark-text">Mật khẩu</label>
-        <input type="password" id="password" name="password" class="input-field" required>
-      </div>
-      <div class="text-center">
-        <button type="submit" class="btn-primary w-full">
-          Đăng Nhập
-        </button>
-      </div>
+  <section class="auth fade-in">
+    <h2>Đăng Nhập</h2>
+    <form>
+      <input type="text" placeholder="Tên đăng nhập" required>
+      <input type="password" placeholder="Mật khẩu" required>
+      <button type="submit" class="hover-scale">Đăng Nhập</button>
     </form>
   </section>
 

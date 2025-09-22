@@ -3,10 +3,198 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AsakaCloud.vn Clone</title>
+  <title>#plc Studios - Cloud Hosting Game Server</title>
     <link rel="icon" href="/favicon.ico" />
+  <meta name="description" content="Website #plc Studios cung cấp dịch vụ cloud hosting cho game server, VPS, Dedicated Server, Cloud Server với thiết kế hiện đại, hiệu ứng đẹp mắt, responsive cho mọi thiết bị." />
+    <style>
+      body {
+        background: linear-gradient(135deg, #004b6b, #006799);
+        min-height: 100vh;
+        color: #fff;
+        font-family: 'Segoe UI', Arial, sans-serif;
+      }
+      .fade-in {
+        animation: fadeIn 2s ease-in-out;
+      }
+      @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+      .hover-scale {
+        transition: transform 0.2s;
+      }
+      .hover-scale:hover {
+        transform: scale(1.05);
+      }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 32px 16px;
+      }
+      h1, h2, h3 {
+        color: #6a00ff;
+      }
+      .card {
+        background: rgba(10,25,47,0.85);
+        border-radius: 12px;
+        padding: 24px;
+        margin-bottom: 24px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+      }
+      .navbar {
+        position: sticky;
+        top: 0;
+        background: rgba(10,25,47,0.95);
+        padding: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+      }
+      .navbar a {
+        color: #fff;
+        margin: 0 12px;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .navbar a:hover {
+        color: #6a00ff;
+      }
+      .btn {
+        background: #6a00ff;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 8px 20px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      .btn-primary {
+        background: #004b6b;
+      }
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.6);
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+      }
+      .modal.active {
+        display: flex;
+      }
+      .modal-content {
+        background: #0a192f;
+        padding: 32px;
+        border-radius: 12px;
+        min-width: 320px;
+        color: #fff;
+        position: relative;
+      }
+      .close {
+        position: absolute;
+        top: 12px;
+        right: 16px;
+        font-size: 24px;
+        color: #fff;
+        cursor: pointer;
+      }
+      @media (max-width: 600px) {
+        .container { padding: 16px 4px; }
+        .card { padding: 12px; }
+        .navbar { flex-direction: column; }
+      }
+    </style>
+    <script>
+      function openModal(id) {
+        document.getElementById(id).classList.add('active');
+      }
+      function closeModal(id) {
+        document.getElementById(id).classList.remove('active');
+      }
+    </script>
   </head>
-  <body class="bg-gradient-main min-h-screen">
-    <div id="root"></div>
+  <body>
+    <div class="navbar">
+  <div><strong>#plc Studios</strong></div>
+      <div>
+        <a href="#hosting">Dịch vụ Hosting</a>
+        <a href="#about">Giới thiệu</a>
+        <a href="#support">Hỗ trợ</a>
+        <a href="#contact">Liên hệ</a>
+      </div>
+      <div>
+        <button class="btn" onclick="openModal('loginModal')">Đăng Nhập</button>
+        <button class="btn btn-primary" onclick="openModal('registerModal')">Đăng Ký</button>
+      </div>
+    </div>
+    <div class="container fade-in">
+  <h1>Tổng Quan Website #plc Studios</h1>
+      <div class="card">
+  <p>Website #plc Studios cung cấp dịch vụ cloud hosting cho các game server, với các đặc điểm như VPS, Dedicated Server, và Cloud Server. Thiết kế tối giản, sang trọng, dễ tiếp cận thông tin dịch vụ, bảng giá, và hướng dẫn cài đặt.</p>
+      </div>
+      <h2>Các Tính Năng Chính</h2>
+      <div class="card">
+        <ul>
+          <li>Responsive Design: Tương thích PC & Mobile</li>
+          <li>Đăng nhập/Đăng ký với popup modal</li>
+          <li>Điều hướng dễ dàng với navbar sticky</li>
+          <li>Giao diện bắt mắt: xanh đen, gradient, hiệu ứng hover</li>
+          <li>Hiệu ứng fade-in khi tải trang</li>
+        </ul>
+      </div>
+      <h2>Các Hiệu Ứng Sử Dụng</h2>
+      <div class="card">
+        <ul>
+          <li><strong>Gradient:</strong> Nền chuyển màu mượt mà</li>
+          <li><strong>Hover:</strong> Card, nút, ảnh mở rộng khi di chuột</li>
+          <li><strong>Fade-in:</strong> Nội dung hiện dần khi tải trang</li>
+          <li><strong>Modal Popup:</strong> Đăng nhập/Đăng ký không chuyển trang</li>
+        </ul>
+      </div>
+      <h2>Các Thành Phần Quan Trọng</h2>
+      <div class="card">
+        <ul>
+          <li><strong>Navbar:</strong> Sticky, dễ điều hướng</li>
+          <li><strong>Section Hosting:</strong> VPS, Cloud Server, Web Hosting, Game Hosting</li>
+          <li><strong>Footer:</strong> Thông tin #plc Studios, liên hệ, chính sách bảo mật</li>
+        </ul>
+      </div>
+      <h2>Đánh Giá & Kết Luận</h2>
+      <div class="card">
+  <p>Màu sắc chủ đạo xanh đen, gradient bắt mắt, hiệu ứng hiện đại, thiết kế flat & material, responsive tốt. Website phù hợp ngành công nghệ, tạo trải nghiệm mượt mà, chuyên nghiệp.</p>
+  <p>Nên sử dụng HTML, CSS (TailwindCSS), JavaScript (React/VanillaJS) để xây dựng website tương tự cho #plc Studios.</p>
+      </div>
+    </div>
+    <!-- Modal Đăng Nhập -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('loginModal')">&times;</span>
+        <h3>Đăng Nhập</h3>
+        <form>
+          <input type="text" placeholder="Email hoặc Tên đăng nhập" style="width:100%;margin-bottom:12px;padding:8px;border-radius:6px;border:1px solid #6a00ff;background:#0a192f;color:#fff;" />
+          <input type="password" placeholder="Mật khẩu" style="width:100%;margin-bottom:12px;padding:8px;border-radius:6px;border:1px solid #6a00ff;background:#0a192f;color:#fff;" />
+          <button type="submit" class="btn" style="width:100%;">Đăng Nhập</button>
+        </form>
+      </div>
+    </div>
+    <!-- Modal Đăng Ký -->
+    <div id="registerModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('registerModal')">&times;</span>
+        <h3>Đăng Ký</h3>
+        <form>
+          <input type="text" placeholder="Tên đăng nhập" style="width:100%;margin-bottom:12px;padding:8px;border-radius:6px;border:1px solid #004b6b;background:#0a192f;color:#fff;" />
+          <input type="email" placeholder="Email" style="width:100%;margin-bottom:12px;padding:8px;border-radius:6px;border:1px solid #004b6b;background:#0a192f;color:#fff;" />
+          <input type="password" placeholder="Mật khẩu" style="width:100%;margin-bottom:12px;padding:8px;border-radius:6px;border:1px solid #004b6b;background:#0a192f;color:#fff;" />
+          <button type="submit" class="btn btn-primary" style="width:100%;">Đăng Ký</button>
+        </form>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer style="background:rgba(10,25,47,0.95);padding:32px 0;margin-top:32px;text-align:center;color:#fff;">
+      <div><strong>#plc Studios</strong> &copy; 2025 | Chính sách bảo mật | Liên hệ | Facebook | Zalo</div>
+    </footer>
   </body>
 </html>

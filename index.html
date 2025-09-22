@@ -7,6 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Model card nhân viên ngoài màn hình -->
+    <div id="floating-staff" style="position:fixed;bottom:120px;right:32px;z-index:9999;">
+        <div style="display:flex;flex-direction:column;align-items:center;">
+            <div id="staff-card" style="background:linear-gradient(120deg,#4f8cff,#7f5af0);box-shadow:0 4px 16px #4f8cff60;border-radius:18px;padding:16px 20px;min-width:180px;max-width:220px;display:none;flex-direction:column;align-items:center;">
+                <img src="anhnhanvien.png" alt="Phạm Thành Công" style="width:54px;height:54px;border-radius:50%;box-shadow:0 2px 8px #7f5af080;margin-bottom:8px;">
+                <div style="font-weight:700;font-size:1.1rem;color:#fff;margin-bottom:4px;">Phạm Thành Công</div>
+                <div style="font-size:0.95rem;color:#e0e0e0;margin-bottom:8px;">Model: card.gbl</div>
+                <button onclick="alert('Đang chat với Phạm Thành Công!')" style="background:#fff;color:#4f8cff;font-weight:600;border:none;border-radius:8px;padding:6px 18px;cursor:pointer;">Chat ngay</button>
+            </div>
+            <button id="staff-toggle" style="background:linear-gradient(120deg,#7f5af0,#4f8cff);border:none;border-radius:50%;width:56px;height:56px;box-shadow:0 4px 16px #7f5af060;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#fff"/><text x="12" y="16" text-anchor="middle" font-size="12" fill="#4f8cff" font-family="Arial">NV</text></svg>
+            </button>
+        </div>
+    </div>
     <!-- Nhân viên treo lơ lửng -->
     <div id="floating-staff" style="position:fixed;bottom:120px;right:32px;z-index:9999;">
         <div style="display:flex;flex-direction:column;align-items:center;">
@@ -221,21 +235,15 @@
 
         <!-- Modal Popup Login -->
 
-        <!-- Modal Popup Login -->
-
-    <!-- Toast thông báo thành công -->
-    <div id="toast-success" style="display:none;position:fixed;top:32px;right:32px;z-index:99999;background:linear-gradient(90deg,#4f8cff,#7f5af0);color:#fff;padding:18px 32px;border-radius:16px;box-shadow:0 4px 16px #4f8cff60;font-size:1.1rem;font-weight:600;animation:fadeInToast 0.5s;"></div>
-
-    <style>
-    @keyframes fadeInToast {
-        from { opacity: 0; transform: translateY(-20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    </style>
 
             <script src="Navbar.js"></script>
             <script src="Footer.js"></script>
             <script>
+        // Nhân viên treo lơ lửng toggle
+        document.getElementById('staff-toggle').onclick = function() {
+            var card = document.getElementById('staff-card');
+            card.style.display = (card.style.display === 'none' || card.style.display === '') ? 'flex' : 'none';
+        };
         // Nhân viên treo lơ lửng toggle
         document.getElementById('staff-toggle').onclick = function() {
             var card = document.getElementById('staff-card');
@@ -265,42 +273,7 @@
                         if(bigTitle) bigTitle.style.transform = 'scale(1)';
                     }
                 });
-                // Handle login/register form submit
-                document.addEventListener('DOMContentLoaded', function() {
-                    var loginForm = document.getElementById('loginForm');
-                    if(loginForm) {
-                        loginForm.addEventListener('submit', function(e) {
-                            e.preventDefault();
-                            var user = document.getElementById('loginUser').value;
-                            var pass = document.getElementById('loginPass').value;
-                            showToast('Đăng nhập thành công!');
-                            closeModal('login-modal');
-                        });
-                    }
-                    var regForm = document.getElementById('registerForm');
-                    if(regForm) {
-                        regForm.addEventListener('submit', function(e) {
-                            e.preventDefault();
-                            var user = document.getElementById('regUser').value;
-                            var email = document.getElementById('regEmail').value;
-                            showToast('Đăng ký thành công!');
-                            closeModal('register-modal');
-                        });
-                // Toast hiệu ứng thành công
-                function showToast(msg) {
-                    var toast = document.getElementById('toast-success');
-                    toast.innerText = msg;
-                    toast.style.display = 'block';
-                    toast.style.opacity = '1';
-                    setTimeout(function() {
-                        toast.style.opacity = '0';
-                        setTimeout(function() {
-                            toast.style.display = 'none';
-                        }, 400);
-                    }, 1800);
-                }
-                    }
-                });
+
             </script>
     <!-- Nút chat AI tư vấn góc trái -->
     <button id="ai-chat-btn" style="position:fixed;bottom:32px;left:32px;z-index:9999;background:linear-gradient(120deg,#4f8cff,#7f5af0);box-shadow:0 4px 16px #4f8cff60;border:none;border-radius:50%;width:64px;height:64px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:box-shadow 0.2s;">

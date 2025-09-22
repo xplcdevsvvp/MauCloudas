@@ -1,4 +1,31 @@
 body {
+/* Neon glow for headings */
+.neon-title {
+  font-weight: 900;
+  color: #00e6e6;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 8px #00e6e6,
+    0 0 16px #00334d,
+    0 0 32px #00e6e6;
+}
+.neon-title span {
+  animation: neonLetter 1.2s infinite alternate;
+  display: inline-block;
+}
+@keyframes neonLetter {
+  0% { text-shadow: 0 0 8px #00e6e6, 0 0 16px #00334d; }
+  100% { text-shadow: 0 0 16px #00e6e6, 0 0 32px #00e6e6; color: #fff; }
+}
+/* Neon button effect */
+.main-btn, .cta-btn {
+  box-shadow: 0 0 12px #00e6e6, 0 0 24px #00334d;
+  animation: neonBtn 1.5s infinite alternate;
+}
+@keyframes neonBtn {
+  0% { box-shadow: 0 0 12px #00e6e6, 0 0 24px #00334d; }
+  100% { box-shadow: 0 0 24px #00e6e6, 0 0 48px #00e6e6; }
+}
 @keyframes hangingSwing {
   0% { transform: rotate(-7deg); }
   50% { transform: rotate(7deg); }

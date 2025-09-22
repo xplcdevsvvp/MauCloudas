@@ -19,7 +19,7 @@
                 <!-- Card -->
                 <div id="staff-card-anim" style="width:220px;height:320px;background:linear-gradient(120deg,#07111c 0%,#0a2342 60%,#00334d 100%);border-radius:18px;box-shadow:0 12px 32px #00334d80;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;overflow:hidden;position:relative;animation:hangingSwing 2.2s infinite ease-in-out;">
                     <div style="width:100%;height:110px;background:linear-gradient(90deg,#00e6e6 0%,#00334d 100%);display:flex;align-items:center;justify-content:center;">
-                        <img src="anhnhanvien.jpg" alt="Staff" style="width:78px;height:78px;border-radius:50%;object-fit:cover;box-shadow:0 2px 12px #00334d80;">
+                          <img src="anhnhanvien.jpg" alt="Staff" style="width:88px;height:88px;border-radius:18px;object-fit:cover;box-shadow:0 2px 12px #00334d80;">
                     </div>
                     <div style="position:absolute;top:18px;right:-38px;transform:rotate(90deg);font-size:2.2rem;font-weight:900;color:#eaf6fb;letter-spacing:4px;text-shadow:0 2px 8px #00334d80;">ZAIN</div>
                     <div style="width:100%;padding:18px 0 0 0;display:flex;flex-direction:column;align-items:center;">
@@ -51,7 +51,11 @@
                 <div class="hero-bg" style="background:linear-gradient(120deg,#07111c 0%,#0a2342 60%,#00334d 100%);position:absolute;top:0;left:0;width:100%;height:100%;filter:blur(8px);z-index:1;"></div>
                 <div class="hero-overlay" style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(120deg,rgba(7,17,28,0.92),rgba(10,35,66,0.85));z-index:2;"></div>
                 <div class="hero-content" style="position:relative;z-index:3;">
-                <h1 class="big-title"><span>Dịch vụ cho thuê máy chủ <span class="gradient-text">Game Việt Nam</span></span></h1>
+                                <h1 class="big-title neon-title">
+                                    <span>
+                                        D<span>ị</span>c<span>h</span> <span>v</span>ụ <span>c</span>h<span>o</span> <span>t</span>h<span>u</span>ê <span>m</span>á<span>y</span> <span>c</span>h<span>ủ</span> <span><span class="gradient-text">G</span><span class="gradient-text">a</span><span class="gradient-text">m</span><span class="gradient-text">e</span> <span class="gradient-text">V</span><span class="gradient-text">i</span><span class="gradient-text">ệ</span><span class="gradient-text">t</span> <span class="gradient-text">N</span><span class="gradient-text">a</span><span class="gradient-text">m</span></span>
+                                    </span>
+                                </h1>
                 <p>Asaka Cloud tự hào là một trong những dịch vụ cho thuê máy chủ trò chơi trực tuyến tốt nhất tại Việt Nam, cung cấp giải pháp lưu trữ máy chủ trò chơi trực tuyến chất lượng cao với giá cả phải chăng.</p>
                 <div class="hero-actions">
                     <button class="cta-btn main-btn">Tạo máy chủ Game</button>
@@ -234,6 +238,36 @@
 
             <script src="Navbar.js"></script>
             <script src="Footer.js"></script>
+            <script>
+            // Interactive hanging staff card: drag to move, swing when idle
+            const card = document.getElementById('hanging-staff-card');
+            const animCard = document.getElementById('staff-card-anim');
+            let staffDragging = false, staffOffsetX = 0, staffOffsetY = 0;
+            card.addEventListener('mousedown', function(e) {
+                staffDragging = true;
+                staffOffsetX = e.clientX - card.getBoundingClientRect().left;
+                staffOffsetY = e.clientY - card.getBoundingClientRect().top;
+                card.style.transition = 'none';
+                animCard.style.animation = 'none';
+                card.style.cursor = 'grabbing';
+            });
+            document.addEventListener('mousemove', function(e) {
+                if(staffDragging) {
+                    card.style.left = (e.clientX - staffOffsetX) + 'px';
+                    card.style.top = (e.clientY - staffOffsetY) + 'px';
+                    card.style.right = '';
+                    card.style.bottom = '';
+                    card.style.position = 'fixed';
+                }
+            });
+            document.addEventListener('mouseup', function() {
+                if(staffDragging) {
+                    staffDragging = false;
+                    card.style.cursor = 'grab';
+                    animCard.style.animation = 'hangingSwing 2.2s infinite ease-in-out';
+                }
+            });
+            </script>
         <script>
         // Draggable staff card
         const staffCard = document.getElementById('draggable-staff-card');

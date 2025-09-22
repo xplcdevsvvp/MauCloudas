@@ -7,37 +7,198 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="navbar"></div>
+        <nav class="navbar-container fade-in" style="background:linear-gradient(90deg,#004b6b,#006799);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 8px rgba(0,0,0,0.12);border-radius:24px;margin:18px 24px 0 24px;position:sticky;top:0;z-index:999;">
+            <div class="navbar-logo" style="display:flex;align-items:center;gap:8px;">
+                <img src="xplc-logo.png" alt="Logo" style="height:40px;width:40px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.10);background:#fff;">
+                <span style="font-weight:bold;font-size:1.3rem;color:#fff;">AsakaCloud.vn</span>
+            </div>
+            <ul class="navbar-links" style="list-style:none;display:flex;gap:24px;margin:0;padding:0;">
+                <li><a href="index.html" style="color:#fff;text-decoration:none;font-weight:500;">Trang chủ</a></li>
+                <li><a href="services.html" style="color:#fff;text-decoration:none;font-weight:500;">Dịch vụ Hosting</a></li>
+                <li><a href="#features" style="color:#fff;text-decoration:none;font-weight:500;">Giới thiệu</a></li>
+                <li><a href="#contact" style="color:#fff;text-decoration:none;font-weight:500;">Liên hệ</a></li>
+            </ul>
+            <div class="navbar-actions" style="display:flex;gap:12px;">
+                <button class="cta-btn hover-scale" onclick="openModal('login-modal')">Đăng Nhập</button>
+                <button class="cta-btn hover-scale" onclick="openModal('register-modal')">Đăng Ký</button>
+            </div>
+        </nav>
 
-    <!-- Hero Section -->
-    <section class="hero fade-in">
-        <h1>AsakaCloud.vn</h1>
-        <p>Dịch vụ Cloud Hosting cho Game Server hiện đại, bảo mật, tốc độ cao.</p>
-        <button class="cta-btn hover-scale" onclick="openModal('login-modal')">Đăng Nhập</button>
-        <button class="cta-btn hover-scale" onclick="openModal('register-modal')">Đăng Ký</button>
-    </section>
+        <!-- Hero Section -->
+        <section class="hero fade-in">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <h1><span>Dịch vụ cho thuê máy chủ <span class="gradient-text">Game Việt Nam</span></span></h1>
+                <p>Asaka Cloud tự hào là một trong những dịch vụ cho thuê máy chủ trò chơi trực tuyến tốt nhất tại Việt Nam, cung cấp giải pháp lưu trữ máy chủ trò chơi trực tuyến chất lượng cao với giá cả phải chăng.</p>
+                <div class="hero-actions">
+                    <button class="cta-btn main-btn">Tạo máy chủ Game</button>
+                    <button class="cta-btn alt-btn">Tư vấn ngay về máy chủ</button>
+                </div>
+            </div>
+        </section>
 
-    <!-- Services Section -->
-    <section class="services fade-in">
-        <h2>Dịch Vụ Hosting</h2>
-        <div class="service-list">
-            <div class="service-card hover-scale">
-                <img src="https://img.icons8.com/ios-filled/50/004b6b/server.png" alt="VPS Game">
-                <h3>VPS Game</h3>
-                <p>Máy chủ ảo tối ưu cho các game như Minecraft, Rust, ARK...</p>
+        <!-- Navbar sẽ được render tự động -->
+
+        <!-- Section: Asaka Cloud có gì? -->
+        <section class="features fade-in">
+            <h2>Asaka Cloud có gì?</h2>
+            <div class="features-list">
+                <div class="feature-card">
+                    <div class="feature-icon"><span>💡</span></div>
+                    <h3>Hỗ trợ 24/7</h3>
+                    <p>Đội ngũ kỹ thuật Việt Nam luôn sẵn sàng hỗ trợ bạn mọi lúc, mọi nơi qua Discord và ticket system.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><span>🛡️</span></div>
+                    <h3>Bảo vệ AntiDDoS Pro</h3>
+                    <p>Hệ thống phòng chống tấn công DDoS Layer 4/7 tiên tiến, tích hợp XDP Filter, đảm bảo máy chủ luôn ổn định và an toàn.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><span>⚡</span></div>
+                    <h3>Port 40Gbps</h3>
+                    <p>Kết nối mạng 40Gbps với băng thông không giới hạn, trải nghiệm mượt mà, ping thấp nhất có thể.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><span>🔋</span></div>
+                    <h3>Nguồn điện dự phòng</h3>
+                    <p>Hệ thống nguồn điện dự phòng và giám sát phần cứng 24/7.</p>
+                </div>
             </div>
-            <div class="service-card hover-scale">
-                <img src="https://img.icons8.com/ios-filled/50/006799/cloud.png" alt="Cloud Server">
-                <h3>Cloud Server</h3>
-                <p>Máy chủ đám mây cho ứng dụng và website, bảo mật cao.</p>
+        </section>
+
+        <!-- Section: Bảng giá dịch vụ -->
+        <section class="pricing fade-in">
+            <h2>Chọn gói phù hợp với nhu cầu của bạn</h2>
+            <div class="pricing-list">
+                <div class="pricing-card pricing-dedicated">
+                    <div class="badge badge-orange">VẬT LÝ ĐỘC LẬP</div>
+                    <h3>Dedicated Server</h3>
+                    <ul>
+                        <li>CPU Intel Xeon/AMD EPYC</li>
+                        <li>RAM DDR5</li>
+                        <li>SSD NVMe</li>
+                        <li>Port 40Gbps</li>
+                        <li>Datacenter HCM</li>
+                        <li>Firewall AntiDDoS Pro</li>
+                    </ul>
+                    <div class="price">Chỉ từ <span>400,000 VND</span></div>
+                </div>
+                <div class="pricing-card pricing-basic">
+                    <h3>Basic</h3>
+                    <div class="desc">Lựa chọn cơ bản</div>
+                    <ul>
+                        <li>Intel® Xeon® E5 2697v3</li>
+                        <li>RAM từ 3GB</li>
+                        <li>SSD NVMe</li>
+                        <li>10Gbps port</li>
+                        <li>Datacenter VNPT</li>
+                        <li>Firewall AntiDDoS Pro</li>
+                    </ul>
+                    <div class="price">Chỉ từ <span>25,000 VND</span></div>
+                </div>
+                <div class="pricing-card pricing-balanced">
+                    <div class="badge badge-green">BEST SELLER</div>
+                    <h3>Balanced</h3>
+                    <div class="desc">Cân bằng hiệu năng</div>
+                    <ul>
+                        <li>Intel® Xeon® Gold 6150</li>
+                        <li>RAM từ 2GB</li>
+                        <li>SSD NVMe</li>
+                        <li>10Gbps port</li>
+                        <li>Datacenter VNPT</li>
+                        <li>Firewall AntiDDoS Pro</li>
+                    </ul>
+                    <div class="price">Chỉ từ <span>60,000 VND</span></div>
+                </div>
+                <div class="pricing-card pricing-high">
+                    <div class="badge badge-blue">HIGH PERFORMANCE</div>
+                    <h3>Ryzen/EPYC</h3>
+                    <div class="desc">Công nghệ mới nhất</div>
+                    <ul>
+                        <li>AMD® Ryzen/EPYC</li>
+                        <li>RAM từ 8GB</li>
+                        <li>SSD NVMe</li>
+                        <li>10Gbps port</li>
+                        <li>Datacenter VNPT</li>
+                        <li>Firewall AntiDDoS Pro</li>
+                    </ul>
+                    <div class="price">Chỉ từ <span>400,000 VND</span></div>
+                </div>
             </div>
-            <div class="service-card hover-scale">
-                <img src="https://img.icons8.com/ios-filled/50/6f42c1/domain.png" alt="Web Hosting">
-                <h3>Web Hosting</h3>
-                <p>Lưu trữ website với tốc độ và độ ổn định vượt trội.</p>
+        </section>
+
+        <!-- Section: Phần cứng -->
+        <section class="hardware fade-in">
+            <div class="hardware-list">
+                <div class="hardware-card">
+                    <img src="assets/bg-server.jpg" alt="AMD EPYC" class="hardware-img">
+                    <div class="badge badge-blue">Phù hợp với các dự án lớn</div>
+                </div>
+                <div class="hardware-card">
+                    <img src="assets/bg-server.jpg" alt="Chất lượng cao" class="hardware-img">
+                    <div class="badge badge-purple">Phần cứng chất lượng cao</div>
+                    <div class="hardware-stats">
+                        <span class="stat-green">99.9%<br>Uptime</span>
+                        <span class="stat-blue">&lt; 30ms<br>Latency</span>
+                        <span class="stat-purple">24/7<br>Support</span>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+            <div class="hardware-features">
+                <div class="feature-card">
+                    <div class="feature-icon"><span>🟩</span></div>
+                    <h3>RAM DDR4 ECC</h3>
+                    <p>Bộ nhớ DDR4 ECC tự động phát hiện và sửa lỗi, đảm bảo tính ổn định.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><span>⚡</span></div>
+                    <h3>Port 40Gbps</h3>
+                    <p>Kết nối mạng 40Gbps, trải nghiệm mượt mà, ping thấp nhất có thể.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to action -->
+        <section class="cta-section fade-in">
+            <div class="cta-box">
+                <h2>Bạn muốn tạo máy chủ Game?</h2>
+                <p>Hệ thống bảo mật cao và đội ngũ hỗ trợ 24/7 luôn sẵn sàng phục vụ bạn.</p>
+                <div class="cta-actions">
+                    <button class="cta-btn main-btn">Tạo Máy Chủ Ngay →</button>
+                    <button class="cta-btn alt-btn">Tham Gia Discord</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer fade-in">
+            <div class="footer-cols">
+                <div>
+                    <h4>Dịch Vụ</h4>
+                    <ul>
+                        <li>Gói Máy chủ Game</li>
+                        <li>Dedicated Server</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Điều Hướng</h4>
+                    <ul>
+                        <li>Điều khoản</li>
+                        <li>Client Area</li>
+                        <li>Game Panel</li>
+                        <li>Liên Hệ</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Kết nối với chúng tôi</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Discord</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">© 2022 - 2025 AsakaCloud.vn. Mọi quyền được bảo lưu.</div>
+        </footer>
 
     <!-- Modal Popup Login -->
     <div id="login-modal" class="modal">
